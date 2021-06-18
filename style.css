@@ -5,6 +5,7 @@ body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #ffffff;
+    color: #1d1d1d;
 
 }
 
@@ -117,4 +118,137 @@ body {
 
 }
 
+.linkSocial {
+
+    font-size: 40px;
+    color: #1d1d1d;
+    margin-right: 10px;
+    transition: 0.2s;
+
+}
+
+.linkSocial:hover {
+
+    color: #7aff8b;
+
+}
+
+#projetos {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+}
+
+#projetos .boxProjeto {
+
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    background-color: 1d1d1d;
+    position: relative;
+    box-shadow: 0px 0px 10px #cccccc;
+
+}
+
+
+.imgProject {
+
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #1d1d1d;
+
+}
+
+.overlay {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.4s ease;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+
+}
+
+.boxProjeto:hover .overlay {
+
+    opacity: 0.9;
+
+}
+
+.linkLive {
+
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.iconlink {
+
+    font-size: 30px;
+    color: #7aff7a;
+
+}
+
+/* Projetos */
+
+#project1 {
+
+    background-image: url(imagens/project.jpeg);
+    background-size: 500px;
+    background-position: center;
+
+}
+
+#project2 {
+
+    background-image: url(imagens/project2.jpeg);
+    background-size: 500px;
+    background-position: center;
+
+}
+
+#project3 {
+
+    background-image: url(imagens/project3.jpeg);
+    background-size: 450px;
+    background-position-x: -40px;
+
+}
+
+#project4 {
+
+    background-image: url(imagens/project4.jpeg);
+    background-size: 500px;
+    background-position: center;
+
+}
+
+#project5 {
+
+    background-image: url(imagens/project5.jpeg);
+    background-size: 500px;
+    background-position: center;
+
+}
+
+#project6 {
+
+    background-image: url(imagens/project6.jpeg);
+    background-size: 500px;
+    background-position: center;
+
+}
 
