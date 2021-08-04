@@ -1,0 +1,34 @@
+/* Desktop responsive - HEADER */
+
+@media screen and (min-width: 768px) {
+  #buttonMenuMobile {
+    display: none;
+  }
+
+  header {
+    padding: 20px 40px;
+  }
+
+  #menuHeader {
+    background: transparent;
+    display: block;
+    position: relative;
+  }
+
+  #menuHeader ul {
+    display: flex;
+  }
+
+  #menuHeader ul li {
+    margin: 0;
+    margin-left: 40px;
+  }
+
+  #menuHeader ul li a {
+    font-size: 20px;
+  }
+
+  #intro {
+    flex-direction: row;
+  }
+}
