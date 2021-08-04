@@ -21,7 +21,7 @@ header {
 }
 
 .scrollHeader {
-  background-color: rgb(59, 172, 109);
+  background-color: rgb(79, 161, 108);
   box-shadow: 0 0 5px rgba(19, 19, 19, 0.568);
   transition: 0.4s box-shadow;
 }
@@ -41,7 +41,7 @@ header #title {
 /* Menu header */
 
 #menuHeader {
-  background-color: rgb(8, 119, 63);
+  background-color: rgb(43, 96, 73);
   width: 100%;
   opacity: 0.95;
   position: absolute;
@@ -108,7 +108,7 @@ header #title {
 /* *************************************** */
 
 #intro {
-  background-color: #3bac6d;
+  background-color: rgb(59, 172, 109);
   background-image: url(imagens/pcwallpaper2-2.jpg);
   background-position: center;
   background-size: cover;
@@ -129,13 +129,17 @@ header #title {
 }
 
 #foto {
-  width: 300px;
+  width: 200px;
   height: 200px;
-  background-image: url(imagens/gif-animation-2.gif);
+  background-color: rgb(45, 187, 109);
+  background-image: url(imagens/revomebg/1.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border-radius: 10px;
+  background-position-y: -110px;
+  background-size: cover;
+  border-radius: 50%;
+  border: 5px rgb(29, 226, 150);
+  border-style: double;
+  box-shadow: 0px 0px 10px rgb(11, 160, 80);
 }
 
 #textIntro {
@@ -143,8 +147,52 @@ header #title {
   text-align: center;
 }
 
+#textIntro h2 {
+  font-size: 30px;
+}
+
 #textIntro p {
   font-size: 20px;
+  margin-bottom: 40px;
+}
+
+#textIntro mark.mark1 {
+  background-color: rgb(199, 129, 64);
+  color: white;
+  padding: 0 5px;
+}
+
+#textIntro mark.mark2 {
+  background-color: transparent;
+  color: rgb(255, 214, 137);
+  border-bottom: 3px solid rgb(255, 214, 137);
+}
+
+#socialbuttons a {
+  font-size: 35px;
+  color: white;
+  transition: 0.2s color;
+}
+
+#socialbuttons a:nth-child(2) {
+  margin: 0 15px;
+}
+
+#animationArrow {
+  position: absolute;
+  font-size: 20px;
+  animation-name: arrowDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* animation arrow */
+
+@keyframes arrowDown {
+  0% {bottom: 10px;}
+  50% {bottom: 20px;}
+  100% {bottom: 10px;}
 }
 
 #about {
