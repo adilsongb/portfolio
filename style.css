@@ -117,6 +117,7 @@ header #title {
   justify-content: center;
   flex-direction: column;
   color: white;
+  transition: 0.2s height;
 }
 
 #fotoPerfil {
