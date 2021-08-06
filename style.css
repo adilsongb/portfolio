@@ -118,6 +118,7 @@ header #title {
   flex-direction: column;
   color: white;
   transition: 0.2s height;
+  position: relative;
 }
 
 #fotoPerfil {

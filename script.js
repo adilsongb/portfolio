@@ -17,7 +17,6 @@ window.onload = () => {
   /* Função de modificação da página */
   document.body.onresize = () => {
     heigthWindow = window.innerHeight;
-    introSection.height = `${heigthWindow}px`;
 
     if (window.innerWidth < 768) {
       menuHeaderMobile.style.height = `${heigthWindow}px`;
@@ -25,6 +24,7 @@ window.onload = () => {
       buttonMenuHeaderMobile.classList.remove('change');
       menuHeaderMobile.classList.remove('menuHeaderFlex');
     } else {
+      introSection.height = `${heigthWindow}px`;
       menuHeaderMobile.style.height = 'auto';
       menuHeaderMobile.style.display = 'block';
     }
