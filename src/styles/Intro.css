@@ -12,6 +12,9 @@
   background-color: #22C5A7;
   border-radius: 50%;
   overflow: hidden;
+
+  animation: fadeInUp;
+  animation-duration: 1s;
 }
 
 .intro > h1 {
@@ -19,11 +22,15 @@
   font-size: 3em;
   text-shadow: 1px 3px 0 #00FF85;
   margin-bottom: 0;
+  animation: fadeInUp;
+  animation-duration: 1.2s;
 }
 
 .intro > h2 {
   color: #68FFB7;
   margin: 30px;
+  animation: fadeInUp;
+  animation-duration: 1.4s;
 }
 
 .btns-intro > a {
@@ -33,6 +40,8 @@
   padding: 10px 15px;
   border-radius: 5px;
   display: inline-block;
+  animation: fadeInUp;
+  animation-duration: 1.6s;
 }
 
 .btns-intro > a:nth-child(1) {
