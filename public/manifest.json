@@ -16,6 +16,11 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "dinosaur.png",
+      "type": "image/png",
+      "sizes": "48x48"
     }
   ],
   "start_url": ".",
