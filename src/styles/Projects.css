@@ -1,0 +1,30 @@
+.projects {
+  width: 60%;
+  color: #68FFB7;
+  background-color: rgb(51, 51, 51);
+}
+
+.projects > h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.cont-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+
+.project {
+  background-color: rgb(41, 41, 41);
+  border-radius: 5px;
+  width: 400px;
+  height: 250px;
+}
+
+@media screen and (max-width: 1024px) {
+  .projects {
+    width: 100%;
+  }
+}
