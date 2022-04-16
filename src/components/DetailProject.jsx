@@ -26,10 +26,10 @@ function DetailProject({ project, close }) {
         <div className="content-infos">
           <div className="links">
             <a href={ project.links.deploy } target="_blank" rel="noreferrer">
-              <BiWorld /> Website
+              <BiWorld />
             </a>
             <a href={ project.links.github } target="_blank" rel="noreferrer">
-              <BsGithub /> GitHub
+              <BsGithub />
             </a>
           </div>
           <h3>{ project.projectName }</h3>
