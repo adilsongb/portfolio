@@ -3,8 +3,6 @@ import { useState } from 'react';
 import DetailProject from './DetailProject';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import '../styles/Projects.css';
-import { BiWorld } from "react-icons/bi";
-import { BsGithub } from "react-icons/bs";
 
 function Projects() {
   const [viewDetailProject, setViewDP] = useState(false);
@@ -38,14 +36,6 @@ function Projects() {
               key={ index }
             >
               <div>
-                <div className="details">
-                  <a href={ project.links.deploy } target="_blank" rel="noreferrer">
-                    <BiWorld /> Website
-                  </a>
-                  <a href={ project.links.github } target="_blank" rel="noreferrer">
-                    <BsGithub /> GitHub
-                  </a>
-                </div>
                 <img src={ project.thumb } alt={ project.description } />
               </div>
             </div>
