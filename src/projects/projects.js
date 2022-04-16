@@ -12,7 +12,8 @@ module.exports = [
       deploy: 'https://ontaskhub.web.app/',
       github: 'https://github.com/adilsongb/taskhub',
     },
-    description: 'Lista de tarefas diárias'
+    description: 'Aplicação de lista de tarefas diárias capaz de salvar o progresso do usuário na data em que a tarefa foi registrada.',
+    technologies: ['React.js', 'Context API', 'CSS', 'Firebase'],
   },
   {
     projectName: 'Recipes App',

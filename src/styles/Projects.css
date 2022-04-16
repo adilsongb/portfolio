@@ -71,6 +71,8 @@
   opacity: 1;
 }
 
+/* Retirar assim que finalar o conteiner novo */
+
 .details > a {
   text-decoration: none;
   font-size: 20px;
@@ -111,14 +113,10 @@
   border-left: 1px solid rgb(17, 251, 181);
 }
 
+/* ^^^^^ Retirar assim que finalar o conteiner novo ^^^^^ */
+
 ::-webkit-scrollbar {
   display: none;
-}
-
-.projectDetail {
-  background-color: yellow;
-  position: fixed;
-  top: 0;
 }
 
 @media screen and (min-width: 1700px) {

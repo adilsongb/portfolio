@@ -1,12 +1,25 @@
 import projects from '../projects/projects';
+import { useState } from 'react';
+import DetailProject from './DetailProject';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import '../styles/Projects.css';
 import { BiWorld } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 
 function Projects() {
+  const [viewDetailProject, setViewDP] = useState(false);
+  const [projectDetail, setProject] = useState({});
   let isMobile = useMediaQuery('(max-width: 1300px)');
   const heightScreen = window.innerHeight;
+
+  const viewProject = (project) => {
+    if (!viewDetailProject) {
+      setViewDP(true);
+      setProject(project)
+    } else {
+      setViewDP(false);
+    }
+  }
 
   return (
     <section
@@ -21,6 +34,7 @@ function Projects() {
             <div
               id={ `project${index + 1}` } 
               className="project"
+              onClick={ () => viewProject(project) }
               key={ index }
             >
               <div>
@@ -39,9 +53,7 @@ function Projects() {
         }
       </div>
 
-      {/* <div className="projectDetail">
-        detalhes do projeto
-      </div> */}
+      { viewDetailProject ? <DetailProject project={ projectDetail } close={ viewProject } /> : '' }
     </section>
   );
 }
