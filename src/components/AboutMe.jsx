@@ -30,7 +30,7 @@ function AboutMe() {
         <span>Node.js</span>
         <span>Express.js</span>
         <span>MySQL</span>
-        <span>TypesScript</span>
+        <span>Typescript</span>
         <span>MongoDB</span>
       </div>
     </section>

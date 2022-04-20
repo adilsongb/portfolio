@@ -42,7 +42,7 @@ module.exports = [
       deploy: "https://mercado-livre-clone-mu.vercel.app/",
       github: "https://github.com/adilsongb/mercado-livre-clone",
     },
-    description: "Site de vendas inspirado no site de vendas do Mercado Livre.",
+    description: "Site de vendas inspirado no Mercado Livre.",
     technologies: ["React.js", "CSS"],
   },
   {
