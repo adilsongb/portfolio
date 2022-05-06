@@ -1,7 +1,7 @@
 const thumbTaskhub = require("./img/taskhub.jpg");
 const thumbRecipesApp = require("./img/recipes-app.jpg");
 const thumbWallet = require("./img/trybe-wallet.jpg");
-const thumbMlClone = require("./img/ml-clone.jpg");
+const thumbTFC = require("./img/tfc-front.png");
 const thumbMuseu = require("./img/museu-nacional.jpg");
 
 module.exports = [
@@ -36,14 +36,14 @@ module.exports = [
     technologies: ["React.js", "Redux", "CSS"],
   },
   {
-    projectName: "Mercado Livre Clone",
-    thumb: thumbMlClone,
+    projectName: "Trybe Futebol Clube",
+    thumb: thumbTFC,
     links: {
-      deploy: "https://mercado-livre-clone-mu.vercel.app/",
-      github: "https://github.com/adilsongb/mercado-livre-clone",
+      deploy: "https://tfc-front.herokuapp.com/",
+      github: "https://github.com/adilsongb/futebol-clube",
     },
-    description: "Site de vendas inspirado no Mercado Livre.",
-    technologies: ["React.js", "CSS"],
+    description: "Backend de uma aplicação que informa sobre partidas e classificações de futebol.",
+    technologies: ["Node.js", "TypeScript", "Express", "MySQL", "Sequelize", "Docker", "JWT", "Jest" ],
   },
   {
     projectName: "Museu Nacional",
