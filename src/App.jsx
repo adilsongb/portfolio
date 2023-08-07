@@ -1,22 +1,24 @@
-import Header from './components/Header';
-import Intro from './components/Intro';
-import Projects from './components/Projects';
-import AboutMe from './components/AboutMe';
-import ContactMe from './components/ContactMe';
-import './App.css';
-import 'animate.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Portfolio from "./pages/portfolio";
+import Admin from "./pages/admin";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Portfolio />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Intro />
-        <Projects />
-        <AboutMe />
-        <ContactMe />
-      </main>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
