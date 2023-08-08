@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import Admin from "./pages/admin";
 import Portfolio from "./pages/portfolio";
+import GlobalStyle from "./styles/GlobalStyle";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const colorSecondary = "#212121";
+
   return (
-    <RouterProvider router={router} />
+    <>
+      <GlobalStyle $bgColor={colorSecondary} />
+      <RouterProvider router={router} />
+    </>
   );
 }
 
