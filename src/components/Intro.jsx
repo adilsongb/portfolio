@@ -1,22 +1,45 @@
-import '../styles/Intro.css';
+// import '../styles/Intro.css';
 import avatar from '../img/avatar.png';
 import curriculo from '../adilson-curriculo.pdf';
+import { Containers, LinkButton, Texts } from '../styles';
 
 function Intro() {
   const heightScreen = window.innerHeight;
+  const colorPrimary = "#68FFB7";
+  const colorSecondary = "#212121";
 
   return (
-    <section className="intro" style={{ height: heightScreen - 60 }}>
-      <div className="cont-avatar">
+    <Containers.Intro style={{ height: heightScreen - 60 }}> 
+      <Containers.Avatar $colorPrimary={colorPrimary}>
         <img src={avatar} alt="" width={200} />
-      </div>
-      <h1>{"</ADILSON GABRIEL>"}</h1>
-      <h2>DESENVOLVEDOR WEB</h2>
-      <div className="btns-intro">
-        <a href="#contato">CONTATE-ME</a>
-        <a href={ curriculo } target="_blank" rel="noreferrer">BAIXAR CV</a>
-      </div>
-    </section>
+      </Containers.Avatar>
+      <Texts.Title $colorPrimary={colorPrimary}>
+        {"</ADILSON GABRIEL>"}
+      </Texts.Title>
+      <Texts.Subtitle $colorPrimary={colorPrimary}>
+        DESENVOLVEDOR WEB
+      </Texts.Subtitle>
+      <Containers.ButtonsIntro>
+        <LinkButton
+          as="a"
+          href="#contato"
+          $isPrimary
+          $colorPrimary={colorPrimary}
+          $colorSecondary={colorSecondary}
+        >
+          CONTATE-ME
+        </LinkButton>
+        <LinkButton
+          as="a"
+          href={curriculo} 
+          target="_blank"
+          rel="noreferrer"
+          $colorPrimary={colorPrimary}
+        >
+          BAIXAR CV
+        </LinkButton>
+      </Containers.ButtonsIntro>
+    </Containers.Intro>
   );
 }
 

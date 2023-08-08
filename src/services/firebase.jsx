@@ -18,6 +18,14 @@ export const db = getFirestore(app);
 
 // database
 
+export async function getSettings() {
+  const querySnapshot = await getDocs(collection(db, "settings"));
+  const [aboutme, general, presentation] = querySnapshot.docs.map((doc) => {
+    return doc.data();
+  });
+  return { aboutme, general, presentation };
+}
+
 export async function getProjects() {
   const querySnapshot = await getDocs(collection(db, "projects"));
   const data = querySnapshot.docs.map((doc) => {

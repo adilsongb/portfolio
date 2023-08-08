@@ -54,10 +54,6 @@ form > input:focus {
   outline: none;
 }
 
-form > input::placeholder {
-  color: azure;
-}
-
 form > textarea {
   width: 100%;
   background-color: transparent;
