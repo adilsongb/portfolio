@@ -2,8 +2,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Portfolio from "./pages/Portfolio";
 import Admin from "./pages/admin";
+import Portfolio from "./pages/portfolio";
 
 const router = createBrowserRouter([
   {
