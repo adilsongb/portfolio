@@ -3,7 +3,7 @@ import { getSettings } from '../services/firebase';
 
 export function useSettings() {
   const [loadInitial, setLoadInitial] = useState(true);
-  const [settings, setSettings] = useState([]);
+  const [settings, setSettings] = useState({});
 
   async function getSettingsDB() {
     try {
@@ -12,13 +12,18 @@ export function useSettings() {
     } catch (error) {
       console.error('Error ao fazer a requisição no firebase!');
     } finally {
-      setLoadInitial(true);
+      setLoadInitial(false);
     }
+  }
+
+  function getColors(isDarkMode) {
+    const colors = settings.general.Colors;
+    return isDarkMode ? colors.dark : colors.light;
   }
 
   useEffect(() => {
     getSettingsDB();
   }, []);
 
-  return { settings, loadInitial };
+  return { settings, loadInitial, getColors };
 }

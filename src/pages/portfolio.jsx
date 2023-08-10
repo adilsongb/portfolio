@@ -4,22 +4,10 @@ import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
 import ContactMe from '../components/ContactMe';
 import 'animate.css';
-import { useSettings } from '../hooks/useSettings';
 
 function Portfolio() {
-  const { settings, loadInitial } = useSettings();
-
-  // if (loadInitial) {
-  //   return (
-  //     <div className="App">
-  //       <main>
-  //       </main>
-  //     </div>
-  //   );
-  // }
-
   return (
-    <div className="App">
+    <>
       <Header />
       <main>
         <Intro />
@@ -27,7 +15,7 @@ function Portfolio() {
         <AboutMe />
         <ContactMe />
       </main>
-    </div>
+    </>
   );
 }
 
