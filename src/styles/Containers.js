@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+export const FullScreen = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: ${props => props.$heightScreen};
+`
+
 export const Header = styled.header`
   background-color: rgb(41, 41, 41);
   font-family: 'Montserrat', sans-serif;
