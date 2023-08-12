@@ -9,12 +9,23 @@ export const FullScreen = styled.div`
   height: ${props => props.$heightScreen};
 `
 
+export const Center = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding-inline: 1em;
+  }
+`
+
 export const Header = styled.header`
-  background-color: rgb(41, 41, 41);
+  background-color: ${props => props.theme.color.primary};
   font-family: 'Montserrat', sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 60px;
 
   .title-home {
@@ -23,7 +34,7 @@ export const Header = styled.header`
 
   h1 > a, li > a {
     text-decoration: none;
-    color: white;
+    color: ${props => props.theme.color.secondary};
   }
 
   nav > ul {
@@ -42,7 +53,7 @@ export const Header = styled.header`
   }
 
   nav a:hover {
-    text-shadow: 1px 2px 0 rgb(110, 216, 107);
+    text-shadow: 1px 2px 0 ${props => props.theme.color.text};
   }
 
   .buttonMenuMobile {
@@ -56,7 +67,7 @@ export const Header = styled.header`
   .iconMenu {
     width: 30px;
     height: 4px;
-    background-color: rgb(255, 255, 255);
+    background-color: ${props => props.theme.color.secondary};
     border-radius: 5px;
     margin: 6px 0;
     transition: 0.2s;
@@ -91,7 +102,7 @@ export const Header = styled.header`
     }
 
     nav {
-      background-color: rgb(64, 64, 64);
+      background-color: ${props => props.theme.color.primary};
       position: absolute;
       right: 20px;
       top: 70px;
