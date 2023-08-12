@@ -8,7 +8,8 @@ function ApplicationProvider({ children }) {
   const [themeColors, setThemeColors] = useState({
     primary: '#68FFB7',
     intermediary: '#282828',
-    secondary: '#212121'
+    secondary: '#212121',
+    text: '#F5F5F5'
   });
 
   const heightScreen = window.innerHeight;
@@ -17,7 +18,7 @@ function ApplicationProvider({ children }) {
 
   useEffect(() => {
     if (Object.keys(settings).length > 0) {
-      setThemeColors(settings.general.Colors.dark);
+      setThemeColors(settings.general.Colors.light);
     }
   }, [settings])
 
