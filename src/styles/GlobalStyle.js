@@ -14,13 +14,21 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.$bgColor};
+    background-color: ${props => props.theme.color.secondary};
   }
 
   main {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+
+  h1 {
+    color: ${props => props.theme.color.primary};
+  }
+
+  path {
+    stroke: ${props => props.theme.color.primary};
   }
 `;
 
