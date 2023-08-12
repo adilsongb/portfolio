@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components'
 export const LinkButton = styled.button`
   background: transparent;
   border-radius: 5px;
-  border: 2px solid ${props => props.$colorPrimary};
-  color: ${props => props.$colorPrimary};
+  border: 2px solid ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.primary};
   font-weight: 600;
   padding: 10px 15px;
   animation: fadeInUp;
@@ -12,7 +12,7 @@ export const LinkButton = styled.button`
   text-decoration: none;
 
   ${props => props.$isPrimary && css`
-    background: ${props => props.$colorPrimary};
-    color: ${props => props.$colorSecondary};
+    background: ${props => props.theme.color.primary};
+    color: ${props => props.theme.color.secondary};
   `}
 `

@@ -1,22 +1,19 @@
-// import '../styles/Intro.css';
 import avatar from '../img/avatar.png';
 import curriculo from '../adilson-curriculo.pdf';
 import { Containers, LinkButton, Texts } from '../styles';
 
 function Intro() {
   const heightScreen = window.innerHeight;
-  const colorPrimary = "#68FFB7";
-  const colorSecondary = "#212121";
 
   return (
     <Containers.Intro style={{ height: heightScreen - 60 }}> 
-      <Containers.Avatar $colorPrimary={colorPrimary}>
+      <Containers.Avatar>
         <img src={avatar} alt="" width={200} />
       </Containers.Avatar>
-      <Texts.Title $colorPrimary={colorPrimary}>
+      <Texts.Title>
         {"</ADILSON GABRIEL>"}
       </Texts.Title>
-      <Texts.Subtitle $colorPrimary={colorPrimary}>
+      <Texts.Subtitle>
         DESENVOLVEDOR WEB
       </Texts.Subtitle>
       <Containers.ButtonsIntro>
@@ -24,8 +21,6 @@ function Intro() {
           as="a"
           href="#contato"
           $isPrimary
-          $colorPrimary={colorPrimary}
-          $colorSecondary={colorSecondary}
         >
           CONTATE-ME
         </LinkButton>
@@ -34,7 +29,6 @@ function Intro() {
           href={curriculo} 
           target="_blank"
           rel="noreferrer"
-          $colorPrimary={colorPrimary}
         >
           BAIXAR CV
         </LinkButton>

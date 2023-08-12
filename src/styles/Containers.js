@@ -150,7 +150,7 @@ export const ButtonsIntro = styled.div`
 export const Avatar = styled.div`
   width: 200px;
   height: 200px;
-  background-color: ${props => props.$colorPrimary};
+  background-color: ${props => props.theme.color.primary};
   border-radius: 50%;
   overflow: hidden;
   animation: fadeInUp;
