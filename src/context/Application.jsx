@@ -18,7 +18,7 @@ function ApplicationProvider({ children }) {
 
   useEffect(() => {
     if (Object.keys(settings).length > 0) {
-      setThemeColors(settings.general.Colors.light);
+      setThemeColors(settings.general.Colors.dark);
     }
   }, [settings])
 

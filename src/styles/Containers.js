@@ -26,6 +26,7 @@ export const Header = styled.header`
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 60px;
 
   .title-home {
@@ -41,6 +42,11 @@ export const Header = styled.header`
     display: flex;
     list-style: none;
     padding: 0;
+    align-items: center;
+
+    @media screen and (max-width: 480px) {
+      align-items: normal;
+    }
   }
 
   nav > ul > li {

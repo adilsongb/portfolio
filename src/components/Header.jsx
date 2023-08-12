@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { Containers } from '../styles';
+import ToggleTheme from './ToggleTheme';
 
 function Header() {
   const [toggle, setToggle] = useState('buttonMenuMobile');
@@ -40,6 +41,7 @@ function Header() {
                 CONTATO
               </a>
             </li>
+            <ToggleTheme />
           </ul>
         </nav>
         <button className={toggle} onClick={hadleChange}>
