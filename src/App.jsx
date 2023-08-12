@@ -5,7 +5,6 @@ import {
 import Admin from "./pages/admin";
 import Portfolio from "./pages/portfolio";
 import GlobalStyle from "./styles/GlobalStyle";
-import { useSettings } from "./hooks/useSettings";
 
 const router = createBrowserRouter([
   {
@@ -19,19 +18,9 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const { loadInitial, getColors } = useSettings();
-
-  if (loadInitial) {
-    return (
-      <main />
-    );
-  }
-
-  const colors = getColors(true); // true is DarkMode
-
   return (
     <>
-      <GlobalStyle $bgColor={colors.secondary} />
+      <GlobalStyle />
       <RouterProvider router={router} />
     </>
   );
