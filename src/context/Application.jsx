@@ -11,21 +11,28 @@ function ApplicationProvider({ children }) {
     secondary: '#212121',
     text: '#F5F5F5'
   });
+  const [isDarkMode, setDarkMode] = useState(true);
 
   const heightScreen = window.innerHeight;
 
   const { settings, loadInitial } = useSettings();
 
+  function changeTheme() {
+    setDarkMode(!isDarkMode);
+  }
+
   useEffect(() => {
     if (Object.keys(settings).length > 0) {
-      setThemeColors(settings.general.Colors.dark);
+      setThemeColors(isDarkMode ? settings.general.Colors.dark : settings.general.Colors.light);
     }
-  }, [settings])
+  }, [settings, isDarkMode])
 
   return (
     <Application.Provider value={{
       loading: loadInitial,
+      isDarkMode,
       heightScreen: `${heightScreen}px`,
+      changeTheme,
     }}>
       <ThemeProvider theme={{ color: themeColors }}>
         {children}

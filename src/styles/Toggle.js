@@ -47,8 +47,8 @@ export const Toggle = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    -webkit-box-shadow: inset 10px -4px 0px 0px var(--light);
-    box-shadow: inset 10px -4px 0px 0px var(--light);
+    -webkit-box-shadow: inset 8px -4px 0px 0px var(--light);
+    box-shadow: inset 8px -4px 0px 0px var(--light);
     background-color: var(--dark);
     -webkit-transition: 0.3s;
     transition: 0.3s;

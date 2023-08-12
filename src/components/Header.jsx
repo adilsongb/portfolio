@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { Containers } from '../styles';
 import ToggleTheme from './ToggleTheme';
+import { Application } from '../context/Application';
 
 function Header() {
+  const { isDarkMode, changeTheme } = useContext(Application);
   const [toggle, setToggle] = useState('buttonMenuMobile');
   const [navMobile, setNavMobile] = useState({})
   let isMobile = useMediaQuery('(max-width: 480px)');
@@ -41,7 +43,7 @@ function Header() {
                 CONTATO
               </a>
             </li>
-            <ToggleTheme />
+            <ToggleTheme darkMode={!isDarkMode} onChangeTheme={changeTheme} />
           </ul>
         </nav>
         <button className={toggle} onClick={hadleChange}>

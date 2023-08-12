@@ -1,11 +1,16 @@
 import { Toggle } from '../styles/Toggle';
 
-function ToggleTheme() {
+function ToggleTheme({ darkMode, onChangeTheme }) {
   return (
     <Toggle>
-      <label class="switch-label">
-        <input type="checkbox" class="checkbox" />
-        <span class="slider"></span>
+      <label className="switch-label">
+        <input
+          type="checkbox"
+          className="checkbox"
+          defaultChecked={darkMode}
+          onClick={onChangeTheme}
+        />
+        <span className="slider"></span>
       </label>
     </Toggle>
   );
