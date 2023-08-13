@@ -9,7 +9,8 @@ function ApplicationProvider({ children }) {
     primary: '#68FFB7',
     intermediary: '#282828',
     secondary: '#212121',
-    text: '#F5F5F5'
+    textTitle: '#F5F5F5',
+    textBox: '#3e3e3e'
   });
   const [isDarkMode, setDarkMode] = useState(true);
 

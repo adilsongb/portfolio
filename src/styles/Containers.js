@@ -96,7 +96,7 @@ export const Header = styled.header`
     transform: rotate(45deg) translate(-8px, -8px) ;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 580px) {
     header {
       justify-content: space-between;
       padding: 0 20px;

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import DetailProject from './DetailProject';
 import { useMediaQuery } from '../hooks/useMediaQuery';
-import '../styles/Projects.css';
 import { useProjects } from '../hooks/useProjects';
+import { ProjectsSection, ProjectsList } from '../styles/Projects';
 
 function Projects() {
   const [viewDetailProject, setViewDP] = useState(false);
   const [projectDetail, setProject] = useState({});
-  let isMobile = useMediaQuery('(max-width: 1300px)');
+  let isMobile = useMediaQuery('(max-width: 1200px)');
   const { projects, loadInitial } = useProjects();
 
   const heightScreen = window.innerHeight;
@@ -27,7 +27,7 @@ function Projects() {
         <>
           <div className="project" />
           <div className="project" />
-          {!isMobile && <div className="project" />}
+          <div className="project" />
         </>
       )
     }
@@ -49,18 +49,13 @@ function Projects() {
   }
 
   return (
-    <section
-      id="projetos"
-      className="projects"
-      style={isMobile ? {padding: '40px 0', height: 'auto'} : {height: heightScreen} }
-    >
+    <ProjectsSection style={isMobile ? { padding: '40px 0', height: 'auto' } : { height: heightScreen } }>
       <h2>PROJETOS</h2>
-      <div className="cont-projects">
+      <ProjectsList>
         {renderProjects()}
-      </div>
-
+      </ProjectsList>
       {viewDetailProject ? <DetailProject project={projectDetail} close={viewProject} /> : ''}
-    </section>
+    </ProjectsSection>
   );
 }
 
