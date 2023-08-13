@@ -6,7 +6,7 @@ export const FullScreen = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: ${props => props.$heightScreen};
+  height: 100vh;
 `
 
 export const Center = styled.div`
@@ -44,7 +44,7 @@ export const Header = styled.header`
     padding: 0;
     align-items: center;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 580px) {
       align-items: normal;
     }
   }
@@ -56,6 +56,10 @@ export const Header = styled.header`
 
   nav a {
     transition: 0.3s ease-out;
+
+    @media screen and (max-width: 580px) {
+      color: ${props => props.theme.color.textTitle};
+    }
   }
 
   .buttonMenuMobile {
@@ -104,11 +108,11 @@ export const Header = styled.header`
     }
 
     nav {
-      background-color: ${props => props.theme.color.primary};
+      background-color: ${props => props.theme.color.intermediary};
       position: absolute;
       right: 20px;
       top: 70px;
-      width: 40%;
+      width: 180px;
       height: 0;
       border-radius: 5px;
       transition: 0.5s;
@@ -130,6 +134,7 @@ export const Intro = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: calc(100vh - 60px);
 
   @media screen and (max-width: 1024px) {
     width: 100%;

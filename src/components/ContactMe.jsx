@@ -3,13 +3,8 @@ import { ContactMeSection } from "../styles/ContactMe";
 // import '../styles/ContactMe.css';
 
 function ContactMe() {
-  const heightScreen = window.innerHeight;
-
   return (
-    <ContactMeSection
-      id="contato"
-      style={{ height: heightScreen }}
-    >
+    <ContactMeSection id="contato">
       <h2>CONTATE-ME</h2>
       <div className="socialLinks">
         <a href="https://www.linkedin.com/in/adilsongabriel/" target="_blank" rel="noreferrer"><BsLinkedin /></a>

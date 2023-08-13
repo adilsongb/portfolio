@@ -8,7 +8,7 @@ function Header() {
   const { isDarkMode, changeTheme } = useContext(Application);
   const [toggle, setToggle] = useState('buttonMenuMobile');
   const [navMobile, setNavMobile] = useState({})
-  let isMobile = useMediaQuery('(max-width: 480px)');
+  let isMobile = useMediaQuery('(max-width: 580px)');
 
   const hadleChange = () => {
     if (toggle === 'buttonMenuMobile') {

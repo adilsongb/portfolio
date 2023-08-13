@@ -9,6 +9,7 @@ export const ProjectsSection = styled.section`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: 100vh;
 
   h2 {
     font-size: 30px;

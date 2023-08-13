@@ -3,10 +3,8 @@ import curriculo from '../adilson-curriculo.pdf';
 import { Containers, LinkButton, Texts } from '../styles';
 
 function Intro() {
-  const heightScreen = window.innerHeight;
-
   return (
-    <Containers.Intro style={{ height: heightScreen - 60 }}> 
+    <Containers.Intro> 
       <Containers.Avatar>
         <img src={avatar} alt="" width={200} />
       </Containers.Avatar>

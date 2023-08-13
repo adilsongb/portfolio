@@ -14,8 +14,6 @@ function ApplicationProvider({ children }) {
   });
   const [isDarkMode, setDarkMode] = useState(true);
 
-  const heightScreen = window.innerHeight;
-
   const { settings, loadInitial } = useSettings();
 
   function changeTheme() {
@@ -32,7 +30,6 @@ function ApplicationProvider({ children }) {
     <Application.Provider value={{
       loading: loadInitial,
       isDarkMode,
-      heightScreen: `${heightScreen}px`,
       changeTheme,
     }}>
       <ThemeProvider theme={{ color: themeColors }}>

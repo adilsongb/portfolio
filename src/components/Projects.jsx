@@ -7,10 +7,8 @@ import { ProjectsSection, ProjectsList } from '../styles/Projects';
 function Projects() {
   const [viewDetailProject, setViewDP] = useState(false);
   const [projectDetail, setProject] = useState({});
-  let isMobile = useMediaQuery('(max-width: 1200px)');
+  let isMobile = useMediaQuery('(max-width: 780px)');
   const { projects, loadInitial } = useProjects();
-
-  const heightScreen = window.innerHeight;
 
   const viewProject = (project) => {
     if (!viewDetailProject) {
@@ -53,7 +51,7 @@ function Projects() {
   return (
     <ProjectsSection
       id="projetos"
-      style={isMobile ? { padding: '40px 0', height: 'auto' } : { height: heightScreen } }
+      style={isMobile ? { padding: '40px 0', height: 'auto' } : {} }
     >
       <h2>PROJETOS</h2>
       <ProjectsList>

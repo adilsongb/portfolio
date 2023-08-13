@@ -10,6 +10,13 @@ export const Toggle = styled.div`
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
 
+  @media screen and (max-width: 580px) {
+    --light: #28292c;
+    --dark: #d8dbe0;
+    --link: #28292c;
+    --link-hover: #28292c;
+  }
+
   .checkbox {
     position: absolute;
     display: none;

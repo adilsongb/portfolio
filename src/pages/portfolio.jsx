@@ -10,12 +10,12 @@ import { Loading } from '../styles/Loading';
 import { Containers } from '../styles';
 
 function Portfolio() {
-  const { loading, heightScreen } = useContext(Application);
+  const { loading } = useContext(Application);
 
   if (loading) {
     return (
       <main>
-        <Containers.FullScreen $heightScreen={heightScreen}>
+        <Containers.FullScreen>
           <Loading />
         </Containers.FullScreen>
       </main>
