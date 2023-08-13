@@ -1,12 +1,12 @@
-import '../styles/AboutMe.css';
 import photoProfile from '../img/photo.jpg';
+import { AboutMeSection } from '../styles/AboutMe';
 
 function AboutMe() {
   return (
-    <section id="sobre-mim" className="aboutMe">
+    <AboutMeSection>
       <div className="photoProfile">
         <div className="contPhoto">
-          <img src={ photoProfile } alt="" />
+          <img src={photoProfile} alt="" />
         </div>
       </div>
       <div className="infos">
@@ -33,7 +33,7 @@ function AboutMe() {
         <span>Typescript</span>
         <span>MongoDB</span>
       </div>
-    </section>
+    </AboutMeSection>
   );
 }
 
