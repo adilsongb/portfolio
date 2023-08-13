@@ -1,21 +1,24 @@
-import '../styles/DetailProject.css';
+import { useRef } from "react";
 import { BiWorld } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
+import { ProjectModal } from '../styles/Projects';
 
 function DetailProject({ project, close }) {
+  const modal = useRef();
+
   const closeWindowProject = () => {
-    const container = document.querySelector('.cont-projectDetail');
-    const containerChild = document.querySelector('.projectDetail');
+    const container = modal.current;
+    const containerChild = modal.current.querySelector('.projectDetail');
     container.style.animation = 'fadeOut';
     container.style.animationDuration = '0.5s';
     containerChild.style.animation = 'fadeOutDownBig';
     containerChild.style.animationDuration = '0.5s';
-    setTimeout(() => close({}), 500);
+    setTimeout(() => close({}), 200);
   }
 
   return (
-    <div className="cont-projectDetail">
+    <ProjectModal ref={modal}>
       <div className="projectDetail">
         <div className="thumb">
           <button className="close-btn" onClick={closeWindowProject}>
@@ -42,7 +45,7 @@ function DetailProject({ project, close }) {
           }
         </div>
       </div>
-    </div>
+    </ProjectModal>
   );
 }
 

@@ -14,9 +14,11 @@ function Projects() {
 
   const viewProject = (project) => {
     if (!viewDetailProject) {
+      document.body.style.overflowY = 'hidden'
       setViewDP(true);
       setProject(project)
     } else {
+      document.body.style.overflowY = 'auto'
       setViewDP(false);
     }
   }
@@ -54,7 +56,7 @@ function Projects() {
       <ProjectsList>
         {renderProjects()}
       </ProjectsList>
-      {viewDetailProject ? <DetailProject project={projectDetail} close={viewProject} /> : ''}
+      {viewDetailProject && <DetailProject project={projectDetail} close={viewProject} />}
     </ProjectsSection>
   );
 }
