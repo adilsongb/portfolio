@@ -58,10 +58,6 @@ export const Header = styled.header`
     transition: 0.3s ease-out;
   }
 
-  nav a:hover {
-    text-shadow: 1px 2px 0 ${props => props.theme.color.text};
-  }
-
   .buttonMenuMobile {
     display: none;
     background: none;

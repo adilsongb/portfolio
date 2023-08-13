@@ -51,7 +51,10 @@ function Projects() {
   }
 
   return (
-    <ProjectsSection style={isMobile ? { padding: '40px 0', height: 'auto' } : { height: heightScreen } }>
+    <ProjectsSection
+      id="projetos"
+      style={isMobile ? { padding: '40px 0', height: 'auto' } : { height: heightScreen } }
+    >
       <h2>PROJETOS</h2>
       <ProjectsList>
         {renderProjects()}

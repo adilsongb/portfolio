@@ -1,11 +1,15 @@
 import { BsLinkedin, BsGithub, BsWhatsapp } from "react-icons/bs";
-import '../styles/ContactMe.css';
+import { ContactMeSection } from "../styles/ContactMe";
+// import '../styles/ContactMe.css';
 
 function ContactMe() {
   const heightScreen = window.innerHeight;
 
   return (
-    <section id="contato" className="ContactMe" style={{ height: heightScreen }}>
+    <ContactMeSection
+      id="contato"
+      style={{ height: heightScreen }}
+    >
       <h2>CONTATE-ME</h2>
       <div className="socialLinks">
         <a href="https://www.linkedin.com/in/adilsongabriel/" target="_blank" rel="noreferrer"><BsLinkedin /></a>
@@ -19,7 +23,7 @@ function ContactMe() {
         <textarea name="message" cols="30" rows="10" placeholder="Conteúdo" required></textarea>
         <button type="submit">Enviar</button>
       </form>
-    </section>
+    </ContactMeSection>
   );
 }
 

@@ -3,7 +3,7 @@ import { AboutMeSection } from '../styles/AboutMe';
 
 function AboutMe() {
   return (
-    <AboutMeSection>
+    <AboutMeSection id="sobre-mim">
       <div className="photoProfile">
         <div className="contPhoto">
           <img src={photoProfile} alt="" />
