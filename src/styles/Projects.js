@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import hexToRgbWithOpacity from '../utils/convertColor';
+import { hexToRgbWithOpacity } from '../utils/convertColor';
 
 export const ProjectsSection = styled.section`
   background-color: ${props => props.theme.color.intermediary};

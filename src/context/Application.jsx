@@ -20,6 +20,10 @@ function ApplicationProvider({ children }) {
     setDarkMode(!isDarkMode);
   }
 
+  function setColors(colors) {
+    setThemeColors(prev => ({...prev, ...colors}))
+  }
+
   useEffect(() => {
     if (Object.keys(settings).length > 0) {
       setThemeColors(isDarkMode ? settings.general.Colors.dark : settings.general.Colors.light);
@@ -31,6 +35,8 @@ function ApplicationProvider({ children }) {
       loading: loadInitial,
       isDarkMode,
       changeTheme,
+      setColors,
+      theme: themeColors,
     }}>
       <ThemeProvider theme={{ color: themeColors }}>
         {children}

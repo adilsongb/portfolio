@@ -8,6 +8,7 @@ import 'animate.css';
 import { Application } from '../context/Application';
 import { Loading } from '../styles/Loading';
 import { Containers } from '../styles';
+import PaineAdmin from '../components/PainelAdmin';
 
 function Portfolio() {
   const { loading } = useContext(Application);
@@ -31,6 +32,8 @@ function Portfolio() {
         <AboutMe />
         <ContactMe />
       </main>
+
+      <PaineAdmin />
     </>
   );
 }
