@@ -11,6 +11,10 @@ function PaineAdmin() {
   const [showPainel, setShowPainel] = useState(false);
   const [themeColors, setThemeColors] = useState(theme);
 
+  const notColorChanged = 
+    !checkHexFormat(themeColors) ||
+    JSON.stringify(themeColors) === JSON.stringify(theme)
+
   function checkHexFormat(color) {
     const colorRegex = /^#[0-9A-Fa-f]{6}$/i;
     
@@ -37,7 +41,10 @@ function PaineAdmin() {
   }, [theme])
 
   return (
-    <AdminPainel $showPainel={showPainel} onClick={() => !showPainel && setShowPainel(true)}>
+    <AdminPainel
+      $showPainel={showPainel}
+      onClick={() => !showPainel && setShowPainel(true)}
+    >
       <AiFillEdit />
 
       {!!showPainel && (
@@ -95,10 +102,13 @@ function PaineAdmin() {
           </div>
 
           <div className="actions">
-            <Button disabled={!checkHexFormat(themeColors)} onClick={() => setColors(themeColors)}>
+            <Button
+              disabled={notColorChanged}
+              onClick={() => setColors(themeColors)}
+            >
               Aplicar
             </Button>
-            <Button disabled={!checkHexFormat(themeColors)}>
+            <Button disabled={notColorChanged}>
               Salvar
             </Button>
           </div>

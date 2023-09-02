@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import { useSettings } from '../hooks/useSettings';
 import { ThemeProvider } from 'styled-components';
+import { getUserAuth } from '../services/firebase';
 
 export const Application = createContext();
 
@@ -13,6 +14,7 @@ function ApplicationProvider({ children }) {
     textBox: '#3e3e3e'
   });
   const [isDarkMode, setDarkMode] = useState(true);
+  const userAdmin = getUserAuth();
 
   const { settings, loadInitial } = useSettings();
 
@@ -32,6 +34,7 @@ function ApplicationProvider({ children }) {
 
   return (
     <Application.Provider value={{
+      userAdmin,
       loading: loadInitial,
       isDarkMode,
       changeTheme,

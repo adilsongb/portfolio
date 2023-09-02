@@ -4,14 +4,14 @@ import Intro from '../components/Intro';
 import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
 import ContactMe from '../components/ContactMe';
-import 'animate.css';
 import { Application } from '../context/Application';
 import { Loading } from '../styles/Loading';
 import { Containers } from '../styles';
 import PaineAdmin from '../components/PainelAdmin';
+import 'animate.css';
 
 function Portfolio() {
-  const { loading } = useContext(Application);
+  const { loading, userAdmin } = useContext(Application);
 
   if (loading) {
     return (
@@ -33,7 +33,7 @@ function Portfolio() {
         <ContactMe />
       </main>
 
-      <PaineAdmin />
+      {!!userAdmin && <PaineAdmin />}
     </>
   );
 }

@@ -1,23 +1,42 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8XZbgF1eu-72AbdFvww8krREdV43b8Ws",
-  authDomain: "my-portfolio-97048.firebaseapp.com",
-  projectId: "my-portfolio-97048",
-  storageBucket: "my-portfolio-97048.appspot.com",
-  messagingSenderId: "68480745066",
-  appId: "1:68480745066:web:c254d6aede4d5cd0c01413"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+const auth = getAuth();
+
+// auth
+export async function authLogin(email, password) {
+  await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      console.error({ errorCode, errorMessage });
+    });
+}
+
+export function getUserAuth() {
+  const user = auth.currentUser;
+  return user;
+}
 
 // database
-
 export async function getSettings() {
   const querySnapshot = await getDocs(collection(db, "settings"));
   const [aboutme, general, presentation] = querySnapshot.docs.map((doc) => {

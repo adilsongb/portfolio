@@ -17,7 +17,7 @@ export const CloseButton = styled.button`
   width: 40px;
 
   svg {
-    fill: ${props => props.theme.color.secondary} !important;
+    fill: ${props => getTextColor(props.theme.color.primary)} !important;
   }
 `
 
