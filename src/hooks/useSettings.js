@@ -1,29 +1,42 @@
 import { useState, useEffect } from 'react';
-import { getSettings } from '../services/firebase';
+import { getSettings, setColorsTheme } from '../services/firebase';
 
 export function useSettings() {
-  const [loadInitial, setLoadInitial] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [loadingFetch, setLoadingFetch] = useState(false);
   const [settings, setSettings] = useState({});
 
-  async function getSettingsDB() {
+  async function fetchSettings() {
     try {
       const data = await getSettings();
       setSettings(data);
     } catch (error) {
       console.error('Error ao fazer a requisição no firebase!');
     } finally {
-      setLoadInitial(false);
+      setLoading(false);
     }
   }
 
-  function getColors(isDarkMode) {
-    const colors = settings.general.Colors;
-    return isDarkMode ? colors.dark : colors.light;
+  function saveThemeColors(isDarkMode, theme) {
+    try {
+      setLoadingFetch(true);
+      setColorsTheme(isDarkMode, theme);
+    } catch (error) {
+      console.error('Error ao fazer a requisição no firebase!');
+    } finally {
+      setLoadingFetch(false);
+      fetchSettings();
+    }
   }
 
   useEffect(() => {
-    getSettingsDB();
+    fetchSettings();
   }, []);
 
-  return { settings, loadInitial, getColors };
+  return {
+    settings,
+    loading,
+    loadingFetch,
+    saveThemeColors,
+  };
 }

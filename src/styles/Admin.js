@@ -21,6 +21,10 @@ export const AdminPainel = styled.div`
 
   cursor: pointer;
 
+  section {
+    opacity: 0;
+  }
+
   svg {
     fill: var(--adjust-primary);
     font-size: 2em;
@@ -44,6 +48,12 @@ export const AdminPainel = styled.div`
     border-radius: 5px;
     cursor: auto;
 
+    section {
+      height: 100%;
+      opacity: 0;
+      animation: fadeIn 0.6s forwards; /* Duração da animação e mantém o estado final */
+    }
+
     svg {
       display: none;
     }
@@ -57,23 +67,6 @@ export const AdminPainel = styled.div`
       display: inline-block;
       padding: 10px;
       border-radius: 5px;
-    }
-
-    .tab {
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      color: ${getTextColor(props.theme.color.intermediary)};
-      font-weight: 600;
-    }
-
-    .tab:nth-child(1) {
-      background-color: var(--adjust-intermediary);
-      color: ${getTextColor(adjustColorBrightness(props.theme.color.intermediary, 20))};
-    }
-
-    .tab:not(:first-child):not(:last-child) {
-      margin: 10px;
     }
 
     .content {
@@ -138,4 +131,30 @@ export const AdminPainel = styled.div`
       display: flex;
     }
   `}
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
+
+export const TabNav = styled.span`
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: ${props => getTextColor(props.theme.color.intermediary)};
+  font-weight: 600;
+
+  ${props => props.$selected && css`
+    background-color: var(--adjust-intermediary);
+    color: ${getTextColor(adjustColorBrightness(props.theme.color.intermediary, 20))};
+  `}
+
+  :not(:first-child):not(:last-child) {
+    margin: 10px;
+  }   
 `

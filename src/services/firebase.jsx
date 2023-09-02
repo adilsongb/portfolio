@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  getDocs,
+  updateDoc,
+  collection,
+  getFirestore,
+} from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
@@ -36,7 +43,9 @@ export function getUserAuth() {
   return user;
 }
 
-// database
+// DATABASE
+
+// Settings
 export async function getSettings() {
   const querySnapshot = await getDocs(collection(db, "settings"));
   const [aboutme, general, presentation] = querySnapshot.docs.map((doc) => {
@@ -45,6 +54,15 @@ export async function getSettings() {
   return { aboutme, general, presentation };
 }
 
+export async function setColorsTheme(isDarkMode, theme) {
+  const colorDataRef = doc(db, "settings", "general");
+
+  await updateDoc(colorDataRef, {
+    [`Colors.${isDarkMode ? 'dark': 'light'}`]: theme,
+  });
+}
+
+// Projects
 export async function getProjects() {
   const querySnapshot = await getDocs(collection(db, "projects"));
   const data = querySnapshot.docs.map((doc) => {

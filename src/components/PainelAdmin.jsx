@@ -1,19 +1,29 @@
 import { useContext, useEffect, useState } from "react";
 import { Application } from "../context/Application";
-import { AdminPainel } from "../styles/Admin";
+import { AdminPainel, TabNav } from "../styles/Admin";
 import { AiFillEdit } from "react-icons/ai"
 import { IoMdClose } from "react-icons/io";
 import { Button, CloseButton } from "../styles/Buttons";
+import { getAdminPage } from "../routes";
 
 function PaineAdmin() {
-  const { theme, setColors } = useContext(Application);
+  const {
+    theme,
+    themeSaved,
+    setColors,
+    isDarkMode,
+    saveThemeColors,
+    loadingFetch,
+  } = useContext(Application);
 
   const [showPainel, setShowPainel] = useState(false);
+  const [tabName, setTabName] = useState('geral');
+
   const [themeColors, setThemeColors] = useState(theme);
 
   const notColorChanged = 
     !checkHexFormat(themeColors) ||
-    JSON.stringify(themeColors) === JSON.stringify(theme)
+    JSON.stringify(themeSaved) === JSON.stringify(themeColors)
 
   function checkHexFormat(color) {
     const colorRegex = /^#[0-9A-Fa-f]{6}$/i;
@@ -48,18 +58,37 @@ function PaineAdmin() {
       <AiFillEdit />
 
       {!!showPainel && (
-        <>
+        <section>
           <CloseButton onClick={() => setShowPainel(false)}>
             <IoMdClose className="closeButton" />
           </CloseButton>
 
           <div className="tabs">
-            <span className="tab">Geral</span>
-            <span className="tab">Sobre</span>
-            <span className="tab">Projetos</span>
+            <TabNav
+              className="tab"
+              onClick={() => setTabName('geral')}
+              $selected={tabName === 'geral'}
+            >
+              Geral
+            </TabNav>
+            <TabNav
+              className="tab"
+              onClick={() => setTabName('sobre')}
+              $selected={tabName === 'sobre'}
+            >
+              Sobre
+            </TabNav>
+            <TabNav
+              className="tab"
+              onClick={() => setTabName('projetos')}
+              $selected={tabName === 'projetos'}
+            >
+              Projetos
+            </TabNav>
           </div>
 
           <div className="content">
+            {/* {getAdminPage(tabName)} */}
             <div className="color-manager">
               <span>Cor primária</span>
               <div>
@@ -108,11 +137,14 @@ function PaineAdmin() {
             >
               Aplicar
             </Button>
-            <Button disabled={notColorChanged}>
-              Salvar
+            <Button
+              disabled={notColorChanged}
+              onClick={() => saveThemeColors(isDarkMode, themeColors)}
+            >
+              {loadingFetch ? 'Salvando...' : 'Salvar'}
             </Button>
           </div>
-        </>
+        </section>
       )}
     </AdminPainel>
   );

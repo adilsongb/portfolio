@@ -6,6 +6,7 @@ import { getUserAuth } from '../services/firebase';
 export const Application = createContext();
 
 function ApplicationProvider({ children }) {
+  const [themeSaved, setThemeSaved] = useState();
   const [themeColors, setThemeColors] = useState({
     primary: '#68FFB7',
     intermediary: '#282828',
@@ -16,29 +17,40 @@ function ApplicationProvider({ children }) {
   const [isDarkMode, setDarkMode] = useState(true);
   const userAdmin = getUserAuth();
 
-  const { settings, loadInitial } = useSettings();
+  const {
+    settings,
+    loading,
+    loadingFetch,
+    saveThemeColors,
+  } = useSettings();
 
   function changeTheme() {
     setDarkMode(!isDarkMode);
   }
 
   function setColors(colors) {
-    setThemeColors(prev => ({...prev, ...colors}))
+    setThemeColors(prev => ({...prev, ...colors}));
   }
 
   useEffect(() => {
     if (Object.keys(settings).length > 0) {
-      setThemeColors(isDarkMode ? settings.general.Colors.dark : settings.general.Colors.light);
+      const colors =
+        isDarkMode ? settings.general.Colors.dark : settings.general.Colors.light;
+      setThemeColors(colors);
+      setThemeSaved(colors);
     }
   }, [settings, isDarkMode])
 
   return (
     <Application.Provider value={{
       userAdmin,
-      loading: loadInitial,
+      loading,
+      loadingFetch,
       isDarkMode,
-      changeTheme,
+      changeTheme, 
       setColors,
+      saveThemeColors,
+      themeSaved, // tema de cores salvo no firebase
       theme: themeColors,
     }}>
       <ThemeProvider theme={{ color: themeColors }}>
