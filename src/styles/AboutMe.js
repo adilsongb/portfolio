@@ -5,6 +5,7 @@ export const AboutMeSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  height: 100vh;
 
   .photoProfile {
     width: 30%;
@@ -14,14 +15,14 @@ export const AboutMeSection = styled.section`
     width: 18vw;
     height: 18vw;
     margin: 0 auto;
-    border-radius: 2px;
+    border-radius: 50%;
     box-shadow: -20px -20px 0 ${props => props.theme.color.primary};
   }
 
   .contPhoto > img {
     width: 100%;
     height: 100%;
-    border-radius: 2px;
+    border-radius: 50%;
     object-fit: cover;
   }
 
