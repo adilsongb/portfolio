@@ -5,7 +5,7 @@ export const AboutMeSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 40px 0;
-  height: 100vh;
+  min-height: 100vh;
 
   .photoProfile {
     width: 30%;

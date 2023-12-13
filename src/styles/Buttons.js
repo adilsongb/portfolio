@@ -10,14 +10,13 @@ export const CloseButton = styled.button`
   top: 10px;
   right: 10px;
   font-size: 30px;
-  background-color: ${props => props.theme.color.primary};
+  background-color: transparent;
   border: none;
-  border-radius: 50%;
   height: 40px;
   width: 40px;
 
   svg {
-    fill: ${props => getTextColor(props.theme.color.primary)} !important;
+    fill: ${props => getTextColor(props.theme.color.secondary)} !important;
   }
 `
 
@@ -28,7 +27,6 @@ export const Button = styled.button`
   padding: 10px;
   border-radius: 5px;
   flex: 1;
-  margin: 5px 2px;
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;

@@ -18,6 +18,18 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.color.secondary};
   }
 
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: ${props => props.theme.color.secondary};
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.color.primary};
+  }
+
   main {
     display: flex;
     align-items: center;

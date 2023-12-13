@@ -13,7 +13,7 @@ export const AdminPainel = styled.div`
   bottom: 10vh;
   right: 10vh;
   border-radius: 5px;
-  transition: height 0.3s, width 0.3s;
+  transition: 0.3s;
   
   display: flex;
   justify-content: center;
@@ -42,16 +42,16 @@ export const AdminPainel = styled.div`
   ${props => props.$showPainel && css`
     display: block;
     padding: 10px;
-    box-sizing: border-box;
     width: 30vw;
     height: 50vh;
     border-radius: 5px;
+    box-sizing: border-box;
     cursor: auto;
 
     section {
       height: 100%;
       opacity: 0;
-      animation: fadeIn 0.6s forwards; /* Duração da animação e mantém o estado final */
+      animation: fadeIn 0.5s 0.2s forwards;
     }
 
     svg {
@@ -67,10 +67,11 @@ export const AdminPainel = styled.div`
       display: inline-block;
       padding: 10px;
       border-radius: 5px;
+      height: 5%;
     }
 
     .content {
-      margin-top: 10px;
+      margin: 5px 0;
       width: 100%;
       height: 80%;
       background-color: var(--intermediary);
@@ -78,6 +79,8 @@ export const AdminPainel = styled.div`
       padding: 10px;
       box-sizing: border-box;
       overflow-y: scroll;
+      display: flex;
+      flex-wrap: wrap;
 
       #color-picker {
         -webkit-appearance: none;
@@ -88,21 +91,23 @@ export const AdminPainel = styled.div`
         background-color: transparent;
         border: none;
         cursor: pointer;
+        margin-right: -4px;
       }
       #color-picker::-webkit-color-swatch {
-        border-radius: 8px;
-        border: 2px solid var(--adjust-primary);
+        border-radius: 5px 0 0 5px;
+        border: 2px solid #eee;
       }
       #color-picker::-moz-color-swatch {
-        border-radius: 8px;
-        border: none;
+        border-radius: 5px 0 0 5px;
+        border: 2px solid #eee;
       }
 
       .color-manager {
+        flex-grow: 1;
         margin-bottom: 10px;
 
         span {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 600;
           color: ${getTextColor(props.theme.color.intermediary)};
         }
@@ -113,11 +118,12 @@ export const AdminPainel = styled.div`
 
           input[type="text"] {
             box-sizing: border-box;
-            border-radius: 5px;
+            border-radius: 0 5px 5px 0;
             font-size: 16px;
             padding-left: 10px;
             border: none;
             height: 40px;
+            width: 10vw;
           }
 
           input[type="text"]:focus {
@@ -125,10 +131,26 @@ export const AdminPainel = styled.div`
           }
         }
       }
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: ${props => props.theme.color.secondary};
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: ${props => props.theme.color.primary};
+      }
     }
 
     .actions {
       display: flex;
+
+      button:first-child {
+        margin-right: 5px;
+      }
     }
   `}
 
