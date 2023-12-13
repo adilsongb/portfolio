@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { Application } from "../../context/Application";
 import { checkHexFormat } from "../../utils/checkHexFormat";
 import ButtonsActions from "./ButtonActions";
+import PickerColor from "./PickerColor";
 
 function General() {
   const {
@@ -15,63 +16,67 @@ function General() {
 
   const [themeColors, setThemeColors] = useState(theme);
 
-  const notColorChanged = 
+  const notColorChanged =
     !checkHexFormat(themeColors) ||
-    JSON.stringify(themeSaved) === JSON.stringify(themeColors)
+    JSON.stringify(themeSaved) === JSON.stringify(themeColors);
 
-  const handleInputColorChange = event => {
+  const handleInputColorChange = (event) => {
     const keyColor = event.target.name;
     const newValue = event.target.value;
 
-    setThemeColors(prev => ({...prev, [keyColor]: newValue}))
+    setThemeColors((prev) => ({ ...prev, [keyColor]: newValue }));
   };
 
   useEffect(() => {
     setThemeColors(theme);
-  }, [theme])
+  }, [theme]);
 
   return (
     <>
       <div className="content">
-        <div className="color-manager">
-          <span>Cor primária</span>
-          <div>
-            <input type="color" id="color-picker" name="primary" value={themeColors.primary} onChange={event => handleInputColorChange(event)} />
-            <input type="text" name="primary" value={themeColors.primary} onChange={(event) => handleInputColorChange(event)} />
-          </div>
-        </div>
+        <PickerColor
+          title="Cor primária"
+          name="primary"
+          color={themeColors.primary}
+          onChange={handleInputColorChange}
+        />
 
-        <div className="color-manager">
-          <span>Cor secundária</span>
-          <div>
-            <input type="color" id="color-picker" name="secondary" value={themeColors.secondary} onChange={event => handleInputColorChange(event)} />
-            <input type="text" name="secondary" value={themeColors.secondary} onChange={(event) => handleInputColorChange(event)} />
-          </div>
-        </div>
+        <PickerColor
+          title="Cor secundária"
+          name="secondary"
+          color={themeColors.secondary}
+          onChange={handleInputColorChange}
+        />
 
-        <div className="color-manager">
-          <span>Cor intermediária</span>
-          <div>
-            <input type="color" id="color-picker" name="intermediary" value={themeColors.intermediary} onChange={event => handleInputColorChange(event)} />
-            <input type="text" name="intermediary" value={themeColors.intermediary} onChange={(event) => handleInputColorChange(event)} />
-          </div>
-        </div>
+        <PickerColor
+          title="Cor intermediária"
+          name="intermediary"
+          color={themeColors.intermediary}
+          onChange={handleInputColorChange}
+        />
 
-        <div className="color-manager">
-          <span>Cor de texto 1</span>
-          <div>
-            <input type="color" id="color-picker" name="textTitle" value={themeColors.textTitle} onChange={event => handleInputColorChange(event)} />
-            <input type="text" name="textTitle" value={themeColors.textTitle} onChange={(event) => handleInputColorChange(event)} />
-          </div>
-        </div>
+        <PickerColor
+          title="Cor de texto 1"
+          name="textTitle"
+          color={themeColors.textTitle}
+          onChange={handleInputColorChange}
+        />
 
-        <div className="color-manager">
-          <span>Cor de texto 2</span>
-          <div>
-            <input type="color" id="color-picker" name="textBox" value={themeColors.textBox} onChange={event => handleInputColorChange(event)} />
-            <input type="text" name="textBox" value={themeColors.textBox} onChange={(event) => handleInputColorChange(event)} />
-          </div>
-        </div>
+        <PickerColor
+          title="Cor de texto 2"
+          name="textBox"
+          color={themeColors.textBox}
+          onChange={handleInputColorChange}
+        />
+
+        {/* A ser desenvolvido */}
+
+        <PickerColor
+          title="(Introdução) Cor do título"
+          name="introTextTittle"
+          color={themeColors.textBox}
+          onChange={handleInputColorChange}
+        />
       </div>
 
       <ButtonsActions
