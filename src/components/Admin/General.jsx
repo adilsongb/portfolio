@@ -34,7 +34,10 @@ function General() {
 
   return (
     <>
-      <BoxContent>
+      <BoxContent style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}>
         <PickerColor
           title="Cor primária"
           name="primary"
