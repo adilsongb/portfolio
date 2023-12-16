@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { adjustColorBrightness } from "../utils/convertColor";
 
 export const FullScreen = styled.div`
   width: 60%;
@@ -185,8 +186,6 @@ export const BoxContent = styled.div`
   padding: 10px;
   box-sizing: border-box;
   overflow-y: auto;
-  display: flex;
-  flex-wrap: wrap;
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -198,5 +197,36 @@ export const BoxContent = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: ${(props) => props.theme.color.primary};
+  }
+`;
+
+export const Card = styled.div`
+  background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 20)};
+  border-radius: 2px;
+  display: flex;
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 5rem;
+
+  #card-img {
+    background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 50)};
+    width: 30%;
+    display: block;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #card-content {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 50)};
   }
 `;

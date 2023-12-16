@@ -6,6 +6,7 @@ const thumbMuseu = require("./img/museu-nacional.jpg");
 
 module.exports = [
   {
+    id: 0,
     projectName: "Taskhub",
     thumb: thumbTaskhub,
     links: {
@@ -16,6 +17,7 @@ module.exports = [
     technologies: ["React.js", "Context API", "CSS", "Firebase"],
   },
   {
+    id: 1,
     projectName: "Recipes App",
     thumb: thumbRecipesApp,
     links: {
@@ -26,6 +28,7 @@ module.exports = [
     technologies: ["React.js", "Context API", "Bootstrap", "RTL"],
   },
   {
+    id: 2,
     projectName: "Trybe Wallet",
     thumb: thumbWallet,
     links: {
@@ -36,6 +39,7 @@ module.exports = [
     technologies: ["React.js", "Redux", "CSS"],
   },
   {
+    id: 3,
     projectName: "Trybe Futebol Clube",
     thumb: thumbTFC,
     links: {
@@ -46,6 +50,7 @@ module.exports = [
     technologies: ["Node.js", "TypeScript", "Express", "MySQL", "Sequelize", "Docker", "JWT", "Jest" ],
   },
   {
+    id: 4,
     projectName: "Museu Nacional",
     thumb: thumbMuseu,
     links: {

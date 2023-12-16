@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { getTextColor } from '../utils/convertColor'
 
 export const Title = styled.h1`
   color: ${props => props.theme.color.textTitle};
@@ -14,4 +15,9 @@ export const Subtitle = styled.h2`
   margin: 30px;
   animation: fadeInUp;
   animation-duration: 1.4s;
+`
+
+export const CardTitle = styled.h3`
+  color: ${props => getTextColor(props.theme.color.intermediary)};
+  margin: 0;
 `

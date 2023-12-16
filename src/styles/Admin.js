@@ -64,7 +64,8 @@ export const AdminPainel = styled.div`
 
     .tabs {
       background-color: var(--intermediary);
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding: 10px;
       border-radius: 5px;
       height: 5%;

@@ -1,4 +1,5 @@
-import General from "../components/Admin/General";
+import ProjectsList from "../components/admin/ProjectsList";
+import General from "../components/admin/General";
 
 export function getAdminPage(page) {
   switch (page) {
@@ -7,7 +8,9 @@ export function getAdminPage(page) {
     case 'sobre':
       return <h2>sobre</h2>;
     case 'projetos':
-      return <h2>projetos</h2>
+      return (
+        <ProjectsList />
+      );
     default:
       return <h2>geral</h2>;
   }
