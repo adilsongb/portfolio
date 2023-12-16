@@ -12,7 +12,7 @@ function Intro() {
         {"</ADILSON GABRIEL>"}
       </Texts.Title>
       <Texts.Subtitle>
-        DESENVOLVEDOR WEB
+        DESENVOLVEDOR FULL STACK
       </Texts.Subtitle>
       <Containers.ButtonsIntro>
         <LinkButton
