@@ -1,5 +1,5 @@
-import ProjectsList from "../components/admin/ProjectsList";
-import General from "../components/admin/General";
+import ProjectsList from "../components/Admin/ProjectsList";
+import General from "../components/Admin/General";
 
 export function getAdminPage(page) {
   switch (page) {
