@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const FullScreen = styled.div`
   width: 60%;
@@ -7,7 +7,7 @@ export const FullScreen = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-`
+`;
 
 export const Center = styled.div`
   display: flex;
@@ -19,11 +19,11 @@ export const Center = styled.div`
     width: 100%;
     padding-inline: 1em;
   }
-`
+`;
 
 export const Header = styled.header`
-  background-color: ${props => props.theme.color.primary};
-  font-family: 'Montserrat', sans-serif;
+  background-color: ${(props) => props.theme.color.primary};
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,9 +33,10 @@ export const Header = styled.header`
     font-size: 1.5em;
   }
 
-  h1 > a, li > a {
+  h1 > a,
+  li > a {
     text-decoration: none;
-    color: ${props => props.theme.color.secondary};
+    color: ${(props) => props.theme.color.secondary};
   }
 
   nav > ul {
@@ -58,7 +59,7 @@ export const Header = styled.header`
     transition: 0.3s ease-out;
 
     @media screen and (max-width: 580px) {
-      color: ${props => props.theme.color.textTitle};
+      color: ${(props) => props.theme.color.textTitle};
     }
   }
 
@@ -73,7 +74,7 @@ export const Header = styled.header`
   .iconMenu {
     width: 30px;
     height: 4px;
-    background-color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.secondary};
     border-radius: 5px;
     margin: 6px 0;
     transition: 0.2s;
@@ -81,8 +82,8 @@ export const Header = styled.header`
 
   /* Rotate first bar */
   .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-6px, 6px) ;
-    transform: rotate(-45deg) translate(-6px, 6px) ;
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
   }
 
   /* Fade out the second bar */
@@ -92,8 +93,8 @@ export const Header = styled.header`
 
   /* Rotate last bar */
   .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
   }
 
   @media screen and (max-width: 580px) {
@@ -108,7 +109,7 @@ export const Header = styled.header`
     }
 
     nav {
-      background-color: ${props => props.theme.color.intermediary};
+      background-color: ${(props) => props.theme.color.intermediary};
       position: absolute;
       right: 20px;
       top: 70px;
@@ -126,7 +127,7 @@ export const Header = styled.header`
       margin: 0;
     }
   }
-`
+`;
 
 export const Intro = styled.section`
   width: 60%;
@@ -151,7 +152,7 @@ export const Intro = styled.section`
       font-size: 2em;
     }
   }
-`
+`;
 
 export const ButtonsIntro = styled.div`
   a:nth-child(1) {
@@ -163,14 +164,39 @@ export const ButtonsIntro = styled.div`
     border-radius: 0 5px 5px 0;
     border-left: 1px solid;
   }
-`
+`;
 
 export const Avatar = styled.div`
   width: 200px;
   height: 200px;
-  background-color: ${props => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.primary};
   border-radius: 50%;
   overflow: hidden;
   animation: fadeInUp;
   animation-duration: 1s;
-`
+`;
+
+export const BoxContent = styled.div`
+  margin: 5px 0;
+  width: 100%;
+  height: 80%;
+  background-color: ${(props) => props.theme.color.intermediary};
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.color.secondary};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.color.primary};
+  }
+`;

@@ -3,6 +3,7 @@ import { Application } from "../../context/Application";
 import { checkHexFormat } from "../../utils/checkHexFormat";
 import ButtonsActions from "./ButtonActions";
 import PickerColor from "./PickerColor";
+import { BoxContent } from "../../styles/Containers";
 
 function General() {
   const {
@@ -33,7 +34,7 @@ function General() {
 
   return (
     <>
-      <div className="content">
+      <BoxContent>
         <PickerColor
           title="Cor primária"
           name="primary"
@@ -77,7 +78,7 @@ function General() {
           color={themeColors.textBox}
           onChange={handleInputColorChange}
         />
-      </div>
+      </BoxContent>
 
       <ButtonsActions
         isDisabled={notColorChanged}

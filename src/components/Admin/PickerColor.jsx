@@ -1,6 +1,8 @@
+import { ColorManager } from "../../styles/Inputs";
+
 function PickerColor({ title, name, color, onChange}) {
   return (
-    <div className="color-manager">
+    <ColorManager>
       {!!title && (<span>{title}</span>)}
       <div>
         <input
@@ -17,7 +19,7 @@ function PickerColor({ title, name, color, onChange}) {
           onChange={(event) => onChange(event)}
         />
       </div>
-    </div>
+    </ColorManager>
   );
 }
 
