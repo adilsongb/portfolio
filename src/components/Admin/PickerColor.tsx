@@ -1,5 +1,4 @@
-import React from 'react';
-import { ColorManager } from '../../styles/Inputs';
+import { ColorManager } from '@styles/Inputs';
 
 function PickerColor({
   title,

@@ -1,9 +1,9 @@
-import { useContext, useState, useEffect } from "react";
-import { Application } from "../../context/Application";
-import { checkHexFormat } from "../../utils/checkHexFormat";
-import ButtonsActions from "./ButtonActions";
-import PickerColor from "./PickerColor";
-import { BoxContent } from "../../styles/Containers";
+import { useContext, useState, useEffect } from 'react';
+import { Application } from '../../context/Application';
+import { checkHexFormat } from '../../utils/checkHexFormat';
+import ButtonsActions from './ButtonActions';
+import PickerColor from './PickerColor';
+import { BoxContent } from '../../styles/Containers';
 
 function General() {
   const {
@@ -34,10 +34,12 @@ function General() {
 
   return (
     <>
-      <BoxContent style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}>
+      <BoxContent
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+        }}
+      >
         <PickerColor
           title="Cor primária"
           name="primary"
