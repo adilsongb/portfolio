@@ -4,18 +4,22 @@
   "private": true,
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.69",
+    "@types/react-dom": "^18.2.18",
     "animate.css": "^4.1.1",
     "dotenv": "^16.3.1",
     "firebase": "^10.1.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.14.2",
-    "react-scripts": "5.0.0",
+    "react-scripts": "5.0.1",
     "styled-components": "^6.0.7",
+    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -25,12 +29,14 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build"
   },
-  "homepage": "https://adilsongb.github.io/",
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "homepage": "https://www.adilsongabriel.com.br/",
+  "devDependencies": {
+    "@types/react": "^18.2.46",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "prettier": "^3.1.1"
   },
   "browserslist": {
     "production": [
@@ -43,8 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^2.1.4"
   }
 }
