@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { getSettings, setColorsTheme } from '../services/firebase';
 import { themeColors } from 'types/generics';
-import { generalResponse } from 'types/settings.firebase';
+import type { aboutMeResponse, generalResponse } from 'types/settings.firebase';
 
 export function useSettings() {
   const [loading, setLoading] = useState(true);
   const [loadingFetch, setLoadingFetch] = useState(false);
-  const [settings, setSettings] = useState({});
   const [general, setGeneral] = useState<generalResponse>();
+  const [aboutMe, setAboutMe] = useState<aboutMeResponse>();
 
   async function fetchSettings() {
     try {
       const data = await getSettings();
-      setSettings(data);
       setGeneral(data.general);
+      setAboutMe(data.aboutme);
     } catch (error) {
       console.error('Error ao fazer a requisição no firebase!');
     } finally {
@@ -38,8 +38,8 @@ export function useSettings() {
   }, []);
 
   return {
-    settings,
     general,
+    aboutMe,
     loading,
     loadingFetch,
     saveThemeColors,

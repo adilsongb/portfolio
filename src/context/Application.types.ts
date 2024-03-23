@@ -1,5 +1,6 @@
 import type { User } from 'firebase/auth';
 import { themeColors } from 'types/generics';
+import { aboutMeResponse } from 'types/settings.firebase';
 
 export type ApplicationType = {
   theme: themeColors;
@@ -10,5 +11,6 @@ export type ApplicationType = {
   changeTheme: () => void;
   saveThemeColors: (isDarkMode: boolean, theme: themeColors) => void;
   userAdmin: User | null;
+  aboutMe?: aboutMeResponse;
   themeSaved?: themeColors;
 };

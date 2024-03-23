@@ -37,7 +37,7 @@ function ApplicationProvider({ children }: { children: ReactNode }) {
   const [themeSaved, setThemeSaved] = useState<themeColors>();
   const userAdmin = getUserAuth();
 
-  const { settings, general, loading, loadingFetch, saveThemeColors } =
+  const { general, aboutMe, loading, loadingFetch, saveThemeColors } =
     useSettings();
 
   function changeTheme() {
@@ -54,12 +54,13 @@ function ApplicationProvider({ children }: { children: ReactNode }) {
       setThemeColors(colors);
       setThemeSaved(colors);
     }
-  }, [settings, isDarkMode]);
+  }, [general, isDarkMode]);
 
   return (
     <Application.Provider
       value={{
         userAdmin,
+        aboutMe,
         loading,
         loadingFetch,
         isDarkMode,
