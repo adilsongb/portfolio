@@ -13,7 +13,7 @@ export function hexToRgbWithOpacity(hex, opacity) {
 }
 
 export function adjustColorBrightness(hexColor, factor) {
-  hexColor = hexColor.replace("#", "");
+  hexColor = hexColor.replace('#', '');
 
   const red = parseInt(hexColor.substring(0, 2), 16);
   const green = parseInt(hexColor.substring(2, 4), 16);
@@ -36,10 +36,10 @@ export function adjustColorBrightness(hexColor, factor) {
   }
 
   const adjustedHexColor =
-    "#" +
-    adjustedRed.toString(16).padStart(2, "0") +
-    adjustedGreen.toString(16).padStart(2, "0") +
-    adjustedBlue.toString(16).padStart(2, "0");
+    '#' +
+    adjustedRed.toString(16).padStart(2, '0') +
+    adjustedGreen.toString(16).padStart(2, '0') +
+    adjustedBlue.toString(16).padStart(2, '0');
 
   return adjustedHexColor;
 }

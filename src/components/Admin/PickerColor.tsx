@@ -1,9 +1,19 @@
-import { ColorManager } from "../../styles/Inputs";
+import { ColorManager } from '@styles/Inputs';
 
-function PickerColor({ title, name, color, onChange}) {
+function PickerColor({
+  title,
+  name,
+  color,
+  onChange,
+}: {
+  title: string;
+  name: string;
+  color: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}) {
   return (
     <ColorManager>
-      {!!title && (<span>{title}</span>)}
+      {!!title && <span>{title}</span>}
       <div>
         <input
           type="color"

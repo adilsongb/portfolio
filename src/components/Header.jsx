@@ -7,7 +7,7 @@ import { Application } from '../context/Application';
 function Header() {
   const { isDarkMode, changeTheme } = useContext(Application);
   const [toggle, setToggle] = useState('buttonMenuMobile');
-  const [navMobile, setNavMobile] = useState({})
+  const [navMobile, setNavMobile] = useState({});
   let isMobile = useMediaQuery('(max-width: 580px)');
 
   const hadleChange = () => {
@@ -16,15 +16,15 @@ function Header() {
       setNavMobile({ height: '150px' });
     } else {
       setToggle('buttonMenuMobile');
-      setNavMobile({ height: '0' })
+      setNavMobile({ height: '0' });
     }
-  }
+  };
 
   return (
     <Containers.Header>
       <Containers.Center>
         <h1 className="title-home">
-          <a href="#home">{"</AG>"}</a>
+          <a href="#home">{'</AG>'}</a>
         </h1>
         <nav style={isMobile ? navMobile : {}}>
           <ul>

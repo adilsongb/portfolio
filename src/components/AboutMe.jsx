@@ -1,37 +1,26 @@
-import photoProfile from '../img/photo.jpg';
+import { useApplication } from '@context/Application';
 import { AboutMeSection } from '../styles/AboutMe';
 
 function AboutMe() {
+  const { aboutMe } = useApplication();
+
   return (
     <AboutMeSection id="sobre-mim">
       <div className="photoProfile">
         <div className="contPhoto">
-          <img src={photoProfile} alt="" />
+          <img src={aboutMe.photo} alt="Foto de Adilson Gabriel" />
         </div>
       </div>
       <div className="infos">
         <h2>SOBRE MIM</h2>
-        <p>
-          Olá, eu sou o Adilson Gabriel, tenho 21 anos e sou da cidade de Parauapebas - Pará - Brasil. 
-        </p>
-        <p>
-          Formado em Desenvolvimento Web pela Trybe, sou um aventureiro sempre em busca de novos desafios e de novos conhecimentos sobre o mundo da tecnologia. Gosto de jogos RPG, de muito café e de desenvolver projetos criativos e divertidos em equipe.
-        </p>
+        {aboutMe?.description.map((text, index) => (
+          <p key={index}>{text}</p>
+        ))}
 
         <h2>TECNOLOGIAS</h2>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Redux</span>
-        <span>Context API</span>
-        <span>Jest</span>
-        <span>Firebase</span>
-        <span>Node.js</span>
-        <span>Express.js</span>
-        <span>MySQL</span>
-        <span>Typescript</span>
-        <span>MongoDB</span>
+        {aboutMe?.technologies.map((tec, index) => (
+          <span key={index}>{tec}</span>
+        ))}
       </div>
     </AboutMeSection>
   );

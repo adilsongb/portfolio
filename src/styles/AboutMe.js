@@ -16,7 +16,7 @@ export const AboutMeSection = styled.section`
     height: 18vw;
     margin: 0 auto;
     border-radius: 50%;
-    box-shadow: -20px -20px 0 ${props => props.theme.color.primary};
+    box-shadow: -20px -20px 0 ${(props) => props.theme.color.primary};
   }
 
   .contPhoto > img {
@@ -32,18 +32,18 @@ export const AboutMeSection = styled.section`
 
   .infos > h2 {
     font-size: 30px;
-    color: ${props => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary};
   }
 
   .infos > p {
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
     font-size: 20px;
   }
 
   .infos > span {
     display: inline-block;
-    background-color: ${props => props.theme.color.primary};
-    color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.primary};
+    color: ${(props) => props.theme.color.secondary};
     padding: 5px 10px;
     margin-right: 8px;
     margin-bottom: 10px;
@@ -58,7 +58,7 @@ export const AboutMeSection = styled.section`
     .contPhoto {
       width: 300px;
       height: 300px;
-      box-shadow: -10px -10px 0 ${props => props.theme.color.primary};
+      box-shadow: -10px -10px 0 ${(props) => props.theme.color.primary};
     }
 
     .infos {
@@ -83,7 +83,7 @@ export const AboutMeSection = styled.section`
     .contPhoto {
       width: 200px;
       height: 200px;
-      box-shadow: -10px -10px 0 ${props => props.theme.color.primary};
+      box-shadow: -10px -10px 0 ${(props) => props.theme.color.primary};
     }
 
     .photoProfile {
@@ -94,4 +94,4 @@ export const AboutMeSection = styled.section`
       width: 80%;
     }
   }
-`
+`;

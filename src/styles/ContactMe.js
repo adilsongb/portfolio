@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContactMeSection = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.theme.color.intermediary};
+  background-color: ${(props) => props.theme.color.intermediary};
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -12,12 +12,12 @@ export const ContactMeSection = styled.section`
   h2 {
     font-size: 30px;
     background-color: #ffffff;
-    color: ${props => props.theme.color.textBox};
+    color: ${(props) => props.theme.color.textBox};
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
     margin-bottom: 40px;
-    box-shadow: 10px 10px 0 ${props => props.theme.color.primary};
+    box-shadow: 10px 10px 0 ${(props) => props.theme.color.primary};
   }
 
   .socialLinks {
@@ -28,8 +28,8 @@ export const ContactMeSection = styled.section`
     display: inline-block;
     font-size: 20px;
     text-decoration: none;
-    color: ${props => props.theme.color.primary};
-    background-color: ${props => props.theme.color.secondary};
+    color: ${(props) => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.secondary};
     border-radius: 5px;
     padding: 15px 20px;
     padding-top: 20px;
@@ -50,15 +50,15 @@ export const ContactMeSection = styled.section`
     box-sizing: border-box;
     background-color: transparent;
     margin-bottom: 10px;
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
     padding: 10px;
     font-size: 18px;
-    border: 2px solid ${props => props.theme.color.primary};
+    border: 2px solid ${(props) => props.theme.color.primary};
     border-radius: 5px;
   }
 
   form > input::placeholder {
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
   }
 
   form > input:focus {
@@ -70,17 +70,17 @@ export const ContactMeSection = styled.section`
     width: 100%;
     background-color: transparent;
     box-sizing: border-box;
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
     padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
-    border: 2px solid ${props => props.theme.color.primary};
+    border: 2px solid ${(props) => props.theme.color.primary};
     border-radius: 5px;
     resize: none;
   }
 
   form > textarea::placeholder {
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
   }
 
   form > textarea:focus {
@@ -89,8 +89,8 @@ export const ContactMeSection = styled.section`
 
   form > button {
     float: right;
-    background-color: ${props => props.theme.color.primary};
-    color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.primary};
+    color: ${(props) => props.theme.color.secondary};
     font-weight: 600;
     cursor: pointer;
     border: none;
@@ -110,4 +110,4 @@ export const ContactMeSection = styled.section`
       width: 80%;
     }
   }
-`
+`;

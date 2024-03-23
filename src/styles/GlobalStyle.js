@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.secondary};
   }
 
   body::-webkit-scrollbar {
@@ -21,11 +21,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-track {
-    background: ${props => props.theme.color.secondary};
+    background: ${(props) => props.theme.color.secondary};
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.primary};
   }
 
   main {
@@ -35,11 +35,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    color: ${props => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary};
   }
 
   path {
-    stroke: ${props => props.theme.color.primary};
+    stroke: ${(props) => props.theme.color.primary};
   }
 `;
 

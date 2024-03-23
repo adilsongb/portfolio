@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { GrSecure } from "react-icons/gr";
-import { Button } from "../styles/Buttons";
-import { Input } from "../styles/Inputs";
-import { authLogin } from "../services/firebase";
+import { useState } from 'react';
+import { GrSecure } from 'react-icons/gr';
+import { Button } from '../styles/Buttons';
+import { Input } from '../styles/Inputs';
+import { authLogin } from '../services/firebase';
 
 export default function Admin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoad] = useState(false)
+  const [loading, setLoad] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,7 +26,9 @@ export default function Admin() {
     <div className="App">
       <main style={{ height: '100vh', justifyContent: 'center' }}>
         <form onSubmit={handleLogin}>
-          <h1><GrSecure /> Painel de edição</h1>
+          <h1>
+            <GrSecure /> Painel de edição
+          </h1>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Input
               type="email"
@@ -50,5 +52,5 @@ export default function Admin() {
         </form>
       </main>
     </div>
-  )
+  );
 }

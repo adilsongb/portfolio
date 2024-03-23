@@ -16,13 +16,13 @@ export const CloseButton = styled.button`
   width: 40px;
 
   svg {
-    fill: ${props => getTextColor(props.theme.color.secondary)} !important;
+    fill: ${(props) => getTextColor(props.theme.color.secondary)} !important;
   }
-`
+`;
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.color.primary};
-  color: ${props => getTextColor(props.theme.color.primary)};
+  background-color: ${(props) => props.theme.color.primary};
+  color: ${(props) => getTextColor(props.theme.color.primary)};
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -32,8 +32,9 @@ export const Button = styled.button`
   font-weight: 600;
 
   &:disabled {
-    background-color: ${props => props.theme.color.intermediary};
-    color: ${props => adjustColorBrightness(props.theme.color.intermediary, 20)};
+    background-color: ${(props) => props.theme.color.intermediary};
+    color: ${(props) =>
+      adjustColorBrightness(props.theme.color.intermediary, 20)};
     cursor: default;
   }
-`
+`;

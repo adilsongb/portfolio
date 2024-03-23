@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { AdminPainel, TabNav } from "../styles/Admin";
-import { AiFillEdit } from "react-icons/ai"
-import { IoMdClose } from "react-icons/io";
-import { CloseButton } from "../styles/Buttons";
-import { getAdminPage } from "../routes";
+import { useState } from 'react';
+import { AdminPainel, TabNav } from '../styles/Admin';
+import { AiFillEdit } from 'react-icons/ai';
+import { IoMdClose } from 'react-icons/io';
+import { CloseButton } from '../styles/Buttons';
+import { getAdminPage } from '../routes';
 
 function PaineAdmin() {
   const [showPainel, setShowPainel] = useState(false);

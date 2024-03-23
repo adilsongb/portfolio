@@ -47,7 +47,7 @@ export const Toggle = styled.div`
   }
 
   .slider::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 2px;
     left: 2px;
@@ -69,4 +69,4 @@ export const Toggle = styled.div`
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-`
+`;

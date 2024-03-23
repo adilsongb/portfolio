@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { DragDropContext, Droppable } from "@hello-pangea/dnd";
-import { BoxContent } from "../../styles/Containers";
+import { useState } from 'react';
+import { DragDropContext, Droppable } from '@hello-pangea/dnd';
+import { BoxContent } from '../../styles/Containers';
 
-import projects from "../../projects/projects";
-import ButtonsActions from "./ButtonActions";
-import ProjectCard from "./ProjectCard";
+import projects from '../../projects/projects';
+import ButtonsActions from './ButtonActions';
+import ProjectCard from './ProjectCard';
 
 function ProjectsList() {
   const [list, setList] = useState(projects);
@@ -21,7 +21,7 @@ function ProjectsList() {
   const onDragEnd = (result) => {
     if (!result.destination) return;
 
-    const items = reorder(list, result.source.index, result.destination.index)
+    const items = reorder(list, result.source.index, result.destination.index);
 
     setList(items);
   };
@@ -38,7 +38,11 @@ function ProjectsList() {
                 {...provided.dragHandleProps}
               >
                 {list.map((project, index) => (
-                  <ProjectCard project={project} index={index} key={project.id.toString()} />
+                  <ProjectCard
+                    project={project}
+                    index={index}
+                    key={project.id.toString()}
+                  />
                 ))}
 
                 {provided.placeholder}
@@ -50,8 +54,12 @@ function ProjectsList() {
       <ButtonsActions
         isDisabled={true}
         loading={false}
-        saveOnChanges={() => {}}
-        setPreview={() => {}}
+        saveOnChanges={() => {
+          console.log('teste');
+        }}
+        setPreview={() => {
+          console.log('teste');
+        }}
       />
     </>
   );

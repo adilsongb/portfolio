@@ -1,18 +1,15 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Admin from "./pages/admin";
-import Portfolio from "./pages/portfolio";
-import GlobalStyle from "./styles/GlobalStyle";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Admin from './pages/admin';
+import Portfolio from './pages/portfolio';
+import GlobalStyle from '@styles/GlobalStyle';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Portfolio />,
   },
   {
-    path: "/admin",
+    path: '/admin',
     element: <Admin />,
   },
 ]);
