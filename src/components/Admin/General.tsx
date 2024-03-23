@@ -1,9 +1,9 @@
-import { useContext, useState, useEffect } from 'react';
-import { Application } from '../../context/Application';
-import { checkHexFormat } from '../../utils/checkHexFormat';
+import { useState, useEffect } from 'react';
+import { useApplication } from '@context/Application';
+import { checkHexFormat } from '@utils/checkHexFormat';
 import ButtonsActions from './ButtonActions';
 import PickerColor from './PickerColor';
-import { BoxContent } from '../../styles/Containers';
+import { BoxContent } from '@styles/Containers';
 
 function General() {
   const {
@@ -13,7 +13,7 @@ function General() {
     isDarkMode,
     saveThemeColors,
     loadingFetch,
-  } = useContext(Application);
+  } = useApplication();
 
   const [themeColors, setThemeColors] = useState(theme);
 
@@ -21,7 +21,9 @@ function General() {
     !checkHexFormat(themeColors) ||
     JSON.stringify(themeSaved) === JSON.stringify(themeColors);
 
-  const handleInputColorChange = (event) => {
+  const handleInputColorChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const keyColor = event.target.name;
     const newValue = event.target.value;
 
