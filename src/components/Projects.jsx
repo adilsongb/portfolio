@@ -12,14 +12,14 @@ function Projects() {
 
   const viewProject = (project) => {
     if (!viewDetailProject) {
-      document.body.style.overflowY = 'hidden'
+      document.body.style.overflowY = 'hidden';
       setViewDP(true);
-      setProject(project)
+      setProject(project);
     } else {
-      document.body.style.overflowY = 'auto'
+      document.body.style.overflowY = 'auto';
       setViewDP(false);
     }
-  }
+  };
 
   const renderProjects = () => {
     if (loadInitial) {
@@ -29,35 +29,33 @@ function Projects() {
           <div className="project" />
           <div className="project" />
         </>
-      )
+      );
     }
 
-    return (
-      projects.map((project, index) => (
-        <div
-          id={`project${index + 1}`} 
-          className="project"
-          onClick={() => viewProject(project)}
-          key={index}
-        >
-          <div>
-            <img src={project.images[0]} alt={project.description} />
-          </div>
+    return projects.map((project, index) => (
+      <div
+        id={`project${index + 1}`}
+        className="project"
+        onClick={() => viewProject(project)}
+        key={index}
+      >
+        <div>
+          <img src={project.images[0]} alt={project.description} />
         </div>
-      ))
-    )
-  }
+      </div>
+    ));
+  };
 
   return (
     <ProjectsSection
       id="projetos"
-      style={isMobile ? { padding: '40px 0', height: 'auto' } : {} }
+      style={isMobile ? { padding: '40px 0', height: 'auto' } : {}}
     >
       <h2>PROJETOS</h2>
-      <ProjectsList>
-        {renderProjects()}
-      </ProjectsList>
-      {viewDetailProject && <DetailProject project={projectDetail} close={viewProject} />}
+      <ProjectsList>{renderProjects()}</ProjectsList>
+      {viewDetailProject && (
+        <DetailProject project={projectDetail} close={viewProject} />
+      )}
     </ProjectsSection>
   );
 }

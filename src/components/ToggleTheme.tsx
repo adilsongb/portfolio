@@ -1,6 +1,12 @@
 import { Toggle } from '../styles/Toggle';
 
-function ToggleTheme({ darkMode, onChangeTheme }) {
+function ToggleTheme({
+  darkMode,
+  onChangeTheme,
+}: {
+  darkMode: boolean;
+  onChangeTheme: () => void;
+}) {
   return (
     <Toggle>
       <label className="switch-label">

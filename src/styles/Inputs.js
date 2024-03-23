@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { getTextColor } from "../utils/convertColor";
+import styled from 'styled-components';
+import { getTextColor } from '../utils/convertColor';
 
 export const Input = styled.input`
   padding: 10px;
@@ -25,7 +25,7 @@ export const ColorManager = styled.div`
     display: flex;
     align-items: center;
 
-    input[type="text"] {
+    input[type='text'] {
       box-sizing: border-box;
       border-radius: 0 5px 5px 0;
       font-size: 16px;
@@ -35,7 +35,7 @@ export const ColorManager = styled.div`
       width: 10vw;
     }
 
-    input[type="text"]:focus {
+    input[type='text']:focus {
       outline: none;
     }
   }

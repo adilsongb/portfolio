@@ -1,8 +1,14 @@
-import { Draggable } from "@hello-pangea/dnd";
-import { Card } from "../../styles/Containers";
-import { CardTitle } from "../../styles/Texts";
+import { Draggable } from '@hello-pangea/dnd';
+import { Card } from '../../styles/Containers';
+import { CardTitle } from '../../styles/Texts';
 
-function ProjectCard({ project, index }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: { id: number | string; thumb: string; projectName: string };
+  index: number;
+}) {
   return (
     <Draggable draggableId={project.id.toString()} index={index}>
       {(prov) => (

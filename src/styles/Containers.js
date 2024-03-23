@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { adjustColorBrightness } from "../utils/convertColor";
+import styled from 'styled-components';
+import { adjustColorBrightness } from '../utils/convertColor';
 
 export const FullScreen = styled.div`
   width: 60%;
@@ -24,7 +24,7 @@ export const Center = styled.div`
 
 export const Header = styled.header`
   background-color: ${(props) => props.theme.color.primary};
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,7 +201,8 @@ export const BoxContent = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 20)};
+  background-color: ${(props) =>
+    adjustColorBrightness(props.theme.color.intermediary, 20)};
   border-radius: 2px;
   display: flex;
   margin-bottom: 10px;
@@ -209,10 +210,11 @@ export const Card = styled.div`
   height: 5rem;
 
   #card-img {
-    background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 50)};
+    background-color: ${(props) =>
+      adjustColorBrightness(props.theme.color.intermediary, 50)};
     width: 30%;
     display: block;
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -227,6 +229,7 @@ export const Card = styled.div`
   }
 
   &:hover {
-    background-color: ${props => adjustColorBrightness(props.theme.color.intermediary, 50)};
+    background-color: ${(props) =>
+      adjustColorBrightness(props.theme.color.intermediary, 50)};
   }
 `;

@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { hexToRgbWithOpacity } from '../utils/convertColor';
 
 export const ProjectsSection = styled.section`
-  background-color: ${props => props.theme.color.intermediary};
+  background-color: ${(props) => props.theme.color.intermediary};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,12 +14,12 @@ export const ProjectsSection = styled.section`
   h2 {
     font-size: 30px;
     background-color: #ffffff;
-    color: ${props => props.theme.color.textBox};
+    color: ${(props) => props.theme.color.textBox};
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
     margin-bottom: 40px;
-    box-shadow: 10px 10px 0 ${props => props.theme.color.primary};
+    box-shadow: 10px 10px 0 ${(props) => props.theme.color.primary};
   }
 
   @media screen and (max-width: 780px) {
@@ -27,7 +27,7 @@ export const ProjectsSection = styled.section`
       font-size: 20px;
     }
   }
-`
+`;
 
 export const ProjectsList = styled.section`
   display: grid;
@@ -38,7 +38,7 @@ export const ProjectsList = styled.section`
     border-radius: 5px;
     width: 300px;
     height: 200px;
-    background-color: ${props => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.primary};
     overflow: hidden;
     cursor: pointer;
   }
@@ -94,10 +94,11 @@ export const ProjectsList = styled.section`
       margin-right: 10em;
     }
   }
-`
+`;
 
 export const ProjectModal = styled.div`
-  background-color: ${props => hexToRgbWithOpacity(props.theme.color.intermediary, 0.5)};
+  background-color: ${(props) =>
+    hexToRgbWithOpacity(props.theme.color.intermediary, 0.5)};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +113,7 @@ export const ProjectModal = styled.div`
   -webkit-backdrop-filter: blur(5px);
 
   .projectDetail {
-    background-color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.secondary};
     border-radius: 5px;
     overflow: hidden;
     width: 500px;
@@ -126,7 +127,7 @@ export const ProjectModal = styled.div`
   .projectDetail > .thumb {
     width: 100%;
     height: 300px;
-    background-color: ${props => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.primary};
     position: relative;
   }
 
@@ -154,7 +155,7 @@ export const ProjectModal = styled.div`
   }
 
   .content-infos {
-    color: ${props => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary};
     padding: 5px 10px;
     position: relative;
   }
@@ -165,14 +166,14 @@ export const ProjectModal = styled.div`
   }
 
   .content-infos > p {
-    color: ${props => props.theme.color.textTitle};
+    color: ${(props) => props.theme.color.textTitle};
     font-size: 20px;
     margin-top: 30px;
   }
 
   .content-infos > span {
-    background-color: ${props => props.theme.color.primary};
-    color: ${props => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.primary};
+    color: ${(props) => props.theme.color.secondary};
     margin-right: 8px;
     padding: 5px 10px;
     border-radius: 2px;
@@ -190,19 +191,19 @@ export const ProjectModal = styled.div`
   .links > a {
     text-decoration: none;
     font-size: 20px;
-    color: ${props => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary};
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid ${props => props.theme.color.primary};
+    border: 2px solid ${(props) => props.theme.color.primary};
     transition: 0.2s ease-in-out;
   }
 
   .links > a:hover {
-    background-color: ${props => props.theme.color.primary};
-    color: ${props => props.theme.color.secondary};
-    border: 2px solid ${props => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.primary};
+    color: ${(props) => props.theme.color.secondary};
+    border: 2px solid ${(props) => props.theme.color.primary};
   }
 
   .links > a:nth-child(1) {
@@ -211,7 +212,7 @@ export const ProjectModal = styled.div`
   }
 
   .links > a:nth-child(1):hover {
-    border-right: 1px solid ${props => props.theme.color.primary};
+    border-right: 1px solid ${(props) => props.theme.color.primary};
   }
 
   .links > a:nth-child(2) {
@@ -220,7 +221,7 @@ export const ProjectModal = styled.div`
   }
 
   .links > a:nth-child(2):hover {
-    border-left: 1px solid ${props => props.theme.color.primary};
+    border-left: 1px solid ${(props) => props.theme.color.primary};
   }
 
   @media screen and (max-width: 780px) {
@@ -228,7 +229,7 @@ export const ProjectModal = styled.div`
       justify-content: center;
       align-items: flex-end;
     }
-    
+
     .projectDetail {
       width: 80%;
       position: absolute;
@@ -243,9 +244,9 @@ export const ProjectModal = styled.div`
     }
   }
 
-  @media screen and (max-width: 500px) { 
+  @media screen and (max-width: 500px) {
     .links > a {
       font-size: 4vw;
     }
   }
-`
+`;
