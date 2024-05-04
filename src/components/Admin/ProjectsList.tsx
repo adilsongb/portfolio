@@ -1,15 +1,20 @@
 import { useState } from 'react';
-import { DragDropContext, Droppable } from '@hello-pangea/dnd';
+import { DragDropContext, type DropResult, Droppable } from '@hello-pangea/dnd';
 import { BoxContent } from '../../styles/Containers';
 
 import projects from '../../projects/projects';
 import ButtonsActions from './ButtonActions';
 import ProjectCard from './ProjectCard';
+import type { projectData } from 'types/generics';
 
 function ProjectsList() {
-  const [list, setList] = useState(projects);
+  const [list, setList] = useState<projectData[]>(projects);
 
-  const reorder = (projects, startIndex, endIndex) => {
+  const reorder = (
+    projects: projectData[],
+    startIndex: number,
+    endIndex: number,
+  ) => {
     const result = Array.from(projects);
 
     const [removed] = result.splice(startIndex, 1);
@@ -18,12 +23,12 @@ function ProjectsList() {
     return result;
   };
 
-  const onDragEnd = (result) => {
+  const onDragEnd = (result: DropResult) => {
     if (!result.destination) return;
 
     const items = reorder(list, result.source.index, result.destination.index);
 
-    setList(items);
+    setList(items as projectData[]);
   };
 
   return (
@@ -32,11 +37,7 @@ function ProjectsList() {
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="list" type="list" direction="vertical">
             {(provided) => (
-              <article
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                {...provided.dragHandleProps}
-              >
+              <article ref={provided.innerRef} {...provided.droppableProps}>
                 {list.map((project, index) => (
                   <ProjectCard
                     project={project}

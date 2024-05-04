@@ -12,3 +12,15 @@ export type componentsConfig = {
   showLogo: boolean;
   showSwitchTheme: boolean;
 };
+
+export type projectData = {
+  id: number;
+  projectName: string;
+  thumb: string;
+  links: {
+    deploy: string;
+    github: string;
+  };
+  description: string;
+  technologies: string[];
+};
