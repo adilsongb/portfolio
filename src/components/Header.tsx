@@ -1,14 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { Containers } from '../styles';
 import ToggleTheme from './ToggleTheme';
-import { Application } from '../context/Application';
+import { useApplication } from '../context/Application';
 
 function Header() {
-  const { isDarkMode, changeTheme } = useContext(Application);
+  const { isDarkMode, changeTheme, showLogo, showSwitchTheme } =
+    useApplication();
   const [toggle, setToggle] = useState('buttonMenuMobile');
   const [navMobile, setNavMobile] = useState({});
-  let isMobile = useMediaQuery('(max-width: 580px)');
+  const isMobile = useMediaQuery('(max-width: 580px)');
 
   const hadleChange = () => {
     if (toggle === 'buttonMenuMobile') {
@@ -20,30 +21,34 @@ function Header() {
     }
   };
 
+  const handleClick = isMobile ? hadleChange : undefined;
+
   return (
     <Containers.Header>
       <Containers.Center>
         <h1 className="title-home">
-          <a href="#home">{'</AG>'}</a>
+          {showLogo && <a href="#home">{'</AG>'}</a>}
         </h1>
         <nav style={isMobile ? navMobile : {}}>
           <ul>
             <li>
-              <a href="#projetos" onClick={isMobile ? hadleChange : null}>
-                PROJETOS
+              <a href="#projetos" onClick={handleClick}>
+                Projetos
               </a>
             </li>
             <li>
-              <a href="#sobre-mim" onClick={isMobile ? hadleChange : null}>
-                SOBRE MIM
+              <a href="#sobre-mim" onClick={handleClick}>
+                Sobre mim
               </a>
             </li>
             <li>
-              <a href="#contato" onClick={isMobile ? hadleChange : null}>
-                CONTATO
+              <a href="#contato" onClick={handleClick}>
+                Contato
               </a>
             </li>
-            <ToggleTheme darkMode={!isDarkMode} onChangeTheme={changeTheme} />
+            {showSwitchTheme && (
+              <ToggleTheme darkMode={!isDarkMode} onChangeTheme={changeTheme} />
+            )}
           </ul>
         </nav>
         <button className={toggle} onClick={hadleChange}>

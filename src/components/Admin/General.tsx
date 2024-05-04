@@ -3,12 +3,17 @@ import { useApplication } from '@context/Application';
 import { checkHexFormat } from '@utils/checkHexFormat';
 import ButtonsActions from './ButtonActions';
 import PickerColor from './PickerColor';
-import { BoxContent } from '@styles/Containers';
+import { BoxContent, DivisorLine, ListWrap } from '@styles/Containers';
+import { SectionTitle } from '@styles/Texts';
+import Switch from './Switch';
 
 function General() {
   const {
     theme,
-    themeSaved,
+    showLogo,
+    showSwitchTheme,
+    setComponents,
+    saveComponentsConfig,
     setColors,
     isDarkMode,
     saveThemeColors,
@@ -16,10 +21,12 @@ function General() {
   } = useApplication();
 
   const [themeColors, setThemeColors] = useState(theme);
+  const [localComponents, setLocalComponents] = useState({
+    showLogo,
+    showSwitchTheme,
+  });
 
-  const notColorChanged =
-    !checkHexFormat(themeColors) ||
-    JSON.stringify(themeSaved) === JSON.stringify(themeColors);
+  const hasValidColors = !checkHexFormat(themeColors);
 
   const handleInputColorChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -30,19 +37,62 @@ function General() {
     setThemeColors((prev) => ({ ...prev, [keyColor]: newValue }));
   };
 
+  const handleSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const keyComponent = event.target.name;
+    const newValue = event.target.checked;
+
+    setLocalComponents((prev) => ({ ...prev, [keyComponent]: newValue }));
+  };
+
   useEffect(() => {
     setThemeColors(theme);
   }, [theme]);
 
   return (
     <>
-      <BoxContent
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-        }}
-      >
-        <PickerColor
+      <BoxContent>
+        <ListWrap>
+          <SectionTitle>Cabeçalho</SectionTitle>
+          <PickerColor
+            title="Cor de fundo"
+            name="header"
+            color={themeColors.header}
+            onChange={handleInputColorChange}
+          />
+          <PickerColor
+            title="Cor do texto"
+            name="headerText"
+            color={themeColors.headerText}
+            onChange={handleInputColorChange}
+          />
+          <Switch
+            name="showLogo"
+            active={showLogo}
+            onChange={handleSwitch}
+            title="Mostrar logo"
+          />
+          <Switch
+            name="showSwitchTheme"
+            active={showSwitchTheme}
+            onChange={handleSwitch}
+            title="Mostrar switch de tema"
+          />
+        </ListWrap>
+
+        <DivisorLine />
+
+        <ListWrap>
+          <SectionTitle>Apresentação</SectionTitle>
+          <PickerColor
+            title="Cor de fundo"
+            name="header"
+            color={themeColors.header}
+            onChange={handleInputColorChange}
+          />
+        </ListWrap>
+
+        {/* TODO: Configurar todas as cores para cada sessão! */}
+        {/* <PickerColor
           title="Cor primária"
           name="primary"
           color={themeColors.primary}
@@ -77,21 +127,25 @@ function General() {
           onChange={handleInputColorChange}
         />
 
-        {/* A ser desenvolvido */}
-
         <PickerColor
           title="(Introdução) Cor do título"
           name="introTextTittle"
           color={themeColors.textBox}
           onChange={handleInputColorChange}
-        />
+        /> */}
       </BoxContent>
 
       <ButtonsActions
-        isDisabled={notColorChanged}
+        isDisabled={hasValidColors}
         loading={loadingFetch}
-        saveOnChanges={() => saveThemeColors(isDarkMode, themeColors)}
-        setPreview={() => setColors(themeColors)}
+        saveOnChanges={() => {
+          saveThemeColors(isDarkMode, themeColors);
+          saveComponentsConfig(localComponents);
+        }}
+        setPreview={() => {
+          setColors(themeColors);
+          setComponents(localComponents);
+        }}
       />
     </>
   );

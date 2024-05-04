@@ -23,7 +23,7 @@ export const Center = styled.div`
 `;
 
 export const Header = styled.header`
-  background-color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.header};
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ export const Header = styled.header`
   h1 > a,
   li > a {
     text-decoration: none;
-    color: ${(props) => props.theme.color.secondary};
+    color: ${(props) => props.theme.color.headerText};
   }
 
   nav > ul {
@@ -75,7 +75,7 @@ export const Header = styled.header`
   .iconMenu {
     width: 30px;
     height: 4px;
-    background-color: ${(props) => props.theme.color.secondary};
+    background-color: ${(props) => props.theme.color.headerText};
     border-radius: 5px;
     margin: 6px 0;
     transition: 0.2s;
@@ -232,4 +232,13 @@ export const Card = styled.div`
     background-color: ${(props) =>
       adjustColorBrightness(props.theme.color.intermediary, 50)};
   }
+`;
+
+export const ListWrap = styled.div`
+  flex-direction: row;
+`;
+
+export const DivisorLine = styled.hr`
+  border: 1px solid
+    ${(props) => adjustColorBrightness(props.theme.color.intermediary, 50)};
 `;
