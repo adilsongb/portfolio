@@ -144,6 +144,10 @@ export const Intro = styled.section`
     h1 {
       font-size: 2.5em;
     }
+
+    h2 {
+      font-size: 1.3em;
+    }
   }
 
   @media screen and (max-width: 480px) {
@@ -152,10 +156,16 @@ export const Intro = styled.section`
     h1 {
       font-size: 2em;
     }
+
+    h2 {
+      font-size: 1.2em;
+    }
   }
 `;
 
 export const ButtonsIntro = styled.div`
+  margin-top: 20px;
+
   a:nth-child(1) {
     border-radius: 5px 0 0 5px;
     border-right: 1px solid transparent;
@@ -175,6 +185,7 @@ export const Avatar = styled.div`
   overflow: hidden;
   animation: fadeInUp;
   animation-duration: 1s;
+  margin-bottom: 10px;
 `;
 
 export const BoxContent = styled.div`

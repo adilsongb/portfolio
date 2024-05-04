@@ -93,5 +93,9 @@ export const AboutMeSection = styled.section`
     .infos {
       width: 80%;
     }
+
+    .infos > p {
+      font-size: 1em;
+    }
   }
 `;

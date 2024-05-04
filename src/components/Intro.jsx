@@ -1,4 +1,4 @@
-import avatar from '../img/avatar.png';
+import avatar from '../img/avatar.jpg';
 import curriculo from '../adilson-curriculo.pdf';
 import { Containers, LinkButton, Texts } from '../styles';
 
@@ -6,16 +6,16 @@ function Intro() {
   return (
     <Containers.Intro>
       <Containers.Avatar>
-        <img src={avatar} alt="" width={200} />
+        <img src={avatar} alt="Avatar" width={200} />
       </Containers.Avatar>
       <Texts.Title>{'</ADILSON GABRIEL>'}</Texts.Title>
-      <Texts.Subtitle>DESENVOLVEDOR FULL STACK</Texts.Subtitle>
+      <Texts.Subtitle>Desenvolvedor Full Stack</Texts.Subtitle>
       <Containers.ButtonsIntro>
         <LinkButton as="a" href="#contato" $isPrimary>
-          CONTATE-ME
+          Contate-me
         </LinkButton>
         <LinkButton as="a" href={curriculo} target="_blank" rel="noreferrer">
-          BAIXAR CV
+          Ver Currículo
         </LinkButton>
       </Containers.ButtonsIntro>
     </Containers.Intro>
