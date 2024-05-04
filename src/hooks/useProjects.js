@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getProjects } from '../services/firebase';
+import { infoError } from '@utils/errors';
 
 export function useProjects() {
   const [loadInitial, setLoadInitial] = useState(true);
@@ -10,7 +11,7 @@ export function useProjects() {
       const data = await getProjects();
       setProjects(data);
     } catch (error) {
-      console.error('Error ao fazer a requisição no firebase!');
+      infoError('getProjectsDB');
     } finally {
       setLoadInitial(false);
     }

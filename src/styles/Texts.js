@@ -21,3 +21,9 @@ export const CardTitle = styled.h3`
   color: ${(props) => getTextColor(props.theme.color.intermediary)};
   margin: 0;
 `;
+
+export const SectionTitle = styled.h2`
+  color: ${(props) => getTextColor(props.theme.color.intermediary)};
+  margin: 0;
+  margin-bottom: 10px;
+`;

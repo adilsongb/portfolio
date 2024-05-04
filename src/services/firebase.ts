@@ -15,7 +15,7 @@ import {
   REACT_APP_FIREBASE_PROJECTID,
 } from 'config/envs';
 import { settingsResponse } from 'types/settings.firebase';
-import { themeColors } from 'types/generics';
+import type { componentsConfig, themeColors } from 'types/generics';
 
 const firebaseConfig = {
   apiKey: REACT_APP_FIREBASE_APIKEY,
@@ -67,6 +67,14 @@ export async function setColorsTheme(isDarkMode: boolean, theme: themeColors) {
 
   await updateDoc(colorDataRef, {
     [`Colors.${isDarkMode ? 'dark' : 'light'}`]: theme,
+  });
+}
+
+export async function setComponentsConfig(componentsConfig: componentsConfig) {
+  const colorDataRef = doc(db, 'settings', 'general');
+
+  await updateDoc(colorDataRef, {
+    components: componentsConfig,
   });
 }
 

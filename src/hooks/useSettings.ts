@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getSettings, setColorsTheme } from '../services/firebase';
-import { themeColors } from 'types/generics';
+import {
+  getSettings,
+  setColorsTheme,
+  setComponentsConfig,
+} from '../services/firebase';
+import type { componentsConfig, themeColors } from 'types/generics';
 import type { aboutMeResponse, generalResponse } from 'types/settings.firebase';
+import { infoError } from '@utils/errors';
 
 export function useSettings() {
   const [loading, setLoading] = useState(true);
@@ -15,7 +20,7 @@ export function useSettings() {
       setGeneral(data.general);
       setAboutMe(data.aboutme);
     } catch (error) {
-      console.error('Error ao fazer a requisição no firebase!');
+      infoError('fetchSettings');
     } finally {
       setLoading(false);
     }
@@ -26,7 +31,19 @@ export function useSettings() {
       setLoadingFetch(true);
       setColorsTheme(isDarkMode, theme);
     } catch (error) {
-      console.error('Error ao fazer a requisição no firebase!');
+      infoError('saveThemeColors');
+    } finally {
+      setLoadingFetch(false);
+      fetchSettings();
+    }
+  }
+
+  function saveComponentsConfig(componentsConfig: componentsConfig) {
+    try {
+      setLoadingFetch(true);
+      setComponentsConfig(componentsConfig);
+    } catch (error) {
+      infoError('saveComponentsConfig');
     } finally {
       setLoadingFetch(false);
       fetchSettings();
@@ -43,5 +60,6 @@ export function useSettings() {
     loading,
     loadingFetch,
     saveThemeColors,
+    saveComponentsConfig,
   };
 }

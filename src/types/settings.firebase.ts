@@ -1,10 +1,11 @@
-import { themeColors } from './generics';
+import type { componentsConfig, themeColors } from './generics';
 
 export type generalResponse = {
   Colors: {
     dark: themeColors;
     light: themeColors;
   };
+  components: componentsConfig;
 };
 
 export type aboutMeResponse = {
